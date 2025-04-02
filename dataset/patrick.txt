@@ -1,0 +1,43 @@
+# Patrick knew about IBM's plans, but he was ready to ignore them.
+0 0  Patrick + Patrick PROPN NNP nsubj 1  B-PERSON -         B-ARG0 O      O      B-MAIN1 O       -
+0 1  knew    + know    VERB  VBD ROOT  1  O        know.01   B-V    O      O      O       O       know.v.01
+0 2  about   + about   ADP   IN  prep  1  O        -         B-ARG1 O      O      O       O       -
+0 3  IBM     - IBM     PROPN NNP poss  5  B-ORG    -         I-ARG1 O      O      O       B-MAIN2 -
+0 4  's      + 's      PART  POS case  3  O        -         I-ARG1 O      O      O       I-MAIN2 -
+0 5  plans   - plan    NOUN  NNS pobj  2  O        -         I-ARG1 O      O      O       I-MAIN2 plan.n.01
+0 6  ,       + ,       PUNCT ,   punct 1  O        -         O      O      O      O       O       -
+0 7  but     + but     CCONJ CC  cc    1  O        -         O      O      O      O       O       -
+0 8  he      + he      PRON  PRP nsubj 9  O        -         O      B-ARG1 B-ARG0 B-REF1  O       -
+0 9  was     + be      AUX   VBD conj  1  O        be.01     O      B-V    O      O       O       -
+0 10 ready   + ready   ADJ   JJ  acomp 9  O        -         O      B-ARG2 O      O       O       ready.a.01
+0 11 to      + to      PART  TO  aux   12 O        -         O      I-ARG2 O      O       O       -
+0 12 ignore  + ignore  VERB  VB  xcomp 10 O        ignore.01 O      I-ARG2 B-V    O       O       ignore.v.01
+0 13 them    - they    PRON  PRP dobj  12 O        -         O      I-ARG2 B-ARG1 O       B-REF2  -
+0 14 .       + .       PUNCT .   punct 9  O        -         O      O      O      O       O       -
+# He focused on his own plan, believing his team could still succeed.
+1 0  He        + he      PRON  PRP  nsubj  1  O -          B-ARG0     B-ARG0 O   O          B-REF1 O       -
+1 1  focused   + focus   VERB  VBD  ROOT   1  O focus.01   B-V        O      O   O          O      O       concentrate.v.02
+1 2  on        + on      ADP   IN   prep   1  O -          B-ARG2     O      O   O          O      O       -
+1 3  his       + his     PRON  PRP$ poss   5  O -          I-ARG2     O      O   O          B-REF1 O       -
+1 4  own       + own     ADJ   JJ   amod   5  O -          I-ARG2     O      O   O          O      O       own.s.01
+1 5  plan      - plan    NOUN  NN   pobj   2  O -          I-ARG2     O      O   O          O      O       plan.n.01
+1 6  ,         + ,       PUNCT ,    punct  1  O -          O          O      O   O          O      O       -
+1 7  believing + believe VERB  VBG  advcl  1  O believe.01 B-ARGM-PRD B-V    O   O          O      O       believe.v.03
+1 8  his       + his     PRON  PRP$ poss   9  O -          I-ARGM-PRD B-ARG1 O   B-ARG0     B-REF1 B-MAIN3 -
+1 9  team      + team    NOUN  NN   nsubj  12 O -          I-ARGM-PRD I-ARG1 O   I-ARG0     O      I-MAIN3 team.n.01
+1 10 could     + could   AUX   MD   aux    12 O -          I-ARGM-PRD I-ARG1 B-V B-ARGM-MOD O      O       -
+1 11 still     + still   ADV   RB   advmod 12 O -          I-ARGM-PRD I-ARG1 O   B-ARGM-TMP O      O       still.r.01
+1 12 succeed   - succeed VERB  VB   ccomp  7  O succeed.01 I-ARGM-PRD I-ARG1 O   B-V        O      O       succeed.v.01
+1 13 .         + .       PUNCT .    punct  1  O -          O          O      O   O          O      O       -
+# They just needed to stay on course and work together.
+2 0  They     + they     PRON  PRP nsubj  2 O -       B-ARG0     B-ARG1 B-ARG0     B-REF3 -
+2 1  just     + just     ADV   RB  advmod 2 O -       B-ARGM-ADV O      O          O      merely.r.01
+2 2  needed   + need     VERB  VBD ROOT   2 O need.01 B-V        O      O          O      necessitate.v.01
+2 3  to       + to       PART  TO  aux    4 O -       B-ARG1     O      O          O      -
+2 4  stay     + stay     VERB  VB  xcomp  2 O stay.01 I-ARG1     B-V    O          O      stay.v.01
+2 5  on       + on       ADP   IN  prep   4 O -       I-ARG1     B-ARG3 O          O      -
+2 6  course   + course   NOUN  NN  pobj   5 O -       I-ARG1     I-ARG3 O          O      path.n.04
+2 7  and      + and      CCONJ CC  cc     4 O -       I-ARG1     O      O          O      -
+2 8  work     + work     VERB  VB  conj   4 O work.01 I-ARG1     O      B-V        O      work.v.01
+2 9  together - together ADV   RB  advmod 8 O -       I-ARG1     O      B-ARGM-MNR O      together.r.02
+2 10 .        - .        PUNCT .   punct  2 O -       O          O      O          O      -
