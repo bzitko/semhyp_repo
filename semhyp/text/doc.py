@@ -150,3 +150,37 @@ class Doc:
             # print(sent_start, self[-1].i)
             yield Span(self, sent_start, self[-1].i + 1, str(self[sent_start].sent_i))
             sent_counter += 1
+    
+    def copy(self):
+
+        def make_new_arg(doc, arg):      
+            return Span(doc, arg.start, arg.end, arg.label)
+        
+        new_doc = Doc([t.text for t in self], [t.space for t in self])
+
+        # tokens
+        for new_tok, tok in zip(new_doc, self):
+            new_tok._is_sent_start = tok._is_sent_start
+            new_tok.pos = tok.pos
+            new_tok.tag = tok.tag
+            new_tok.dep = tok.dep
+            new_tok.head = tok.head.i
+
+        # srl
+        new_doc.srl = {}
+        for verb, args in self.srl.items():
+            new_verb = new_doc[verb.i]
+            new_args = tuple(make_new_arg(new_doc, arg) for arg in args)
+            new_doc.srl[new_verb] = new_args
+
+
+        # ents
+        new_doc.ent = tuple(make_new_arg(new_doc, ent) for ent in self.ent)
+
+        # coref
+        new_doc.coref = {}
+        for i, spans in self.coref.items():
+            new_spans = tuple(make_new_arg(new_doc, span) for span in spans)
+            new_doc.coref[i] = new_spans
+        
+        return new_doc

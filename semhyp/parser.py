@@ -991,7 +991,25 @@ def _aux_parse(doc_or_sent, with_lemma=False, with_synset=False):
 
 
 
-def parse(doc_or_sent, with_lemma=False, with_synset=False):
+def parse(doc_or_sent, with_lemma=False, with_synset=False, with_srl=True, with_ner=True, with_coref=True):
+    if not all([with_srl, with_ner, with_coref]):
+        if isinstance(doc_or_sent, Doc):
+            doc = doc_or_sent.copy()
+        else:
+            doc = doc_or_sent.doc.copy()
+
+        if not with_srl:
+            doc.srl = {}
+        if not with_ner:
+            doc.ent = ()
+        if not with_coref:
+            doc.coref = {}
+    
+        if isinstance(doc_or_sent, Doc):
+            doc_or_sent = doc
+        else:
+            doc_or_sent = Span(doc, doc_or_sent.start, doc_or_sent.end, label=doc_or_sent.label)
+
     data = _aux_parse(doc_or_sent, with_lemma=with_lemma, with_synset=with_synset)
     if isinstance(doc_or_sent, Doc):
         graph = list(data["sent2edge"].values())

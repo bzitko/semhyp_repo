@@ -1,3 +1,6 @@
+__pycache__/
+*.py[codz]
+
 /.DS_Store
 /demo.html
 /drawings_for_paper.ipynb
