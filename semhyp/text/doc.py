@@ -151,7 +151,7 @@ class Doc:
             yield Span(self, sent_start, self[-1].i + 1, str(self[sent_start].sent_i))
             sent_counter += 1
     
-    def copy(self):
+    def reduce(self, with_srl=True, with_coref=True, with_ner=True):
 
         def make_new_arg(doc, arg):      
             return Span(doc, arg.start, arg.end, arg.label)
@@ -168,19 +168,22 @@ class Doc:
 
         # srl
         new_doc.srl = {}
-        for verb, args in self.srl.items():
-            new_verb = new_doc[verb.i]
-            new_args = tuple(make_new_arg(new_doc, arg) for arg in args)
-            new_doc.srl[new_verb] = new_args
-
+        if with_srl:
+            for verb, args in self.srl.items():
+                new_verb = new_doc[verb.i]
+                new_args = tuple(make_new_arg(new_doc, arg) for arg in args)
+                new_doc.srl[new_verb] = new_args
 
         # ents
-        new_doc.ent = tuple(make_new_arg(new_doc, ent) for ent in self.ent)
+        new_doc.ent = ()
+        if with_ner:
+            new_doc.ent = tuple(make_new_arg(new_doc, ent) for ent in self.ent)
 
         # coref
         new_doc.coref = {}
-        for i, spans in self.coref.items():
-            new_spans = tuple(make_new_arg(new_doc, span) for span in spans)
-            new_doc.coref[i] = new_spans
-        
+        if with_coref:
+            for i, spans in self.coref.items():
+                new_spans = tuple(make_new_arg(new_doc, span) for span in spans)
+                new_doc.coref[i] = new_spans
+            
         return new_doc

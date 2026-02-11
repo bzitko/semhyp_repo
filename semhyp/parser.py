@@ -284,8 +284,11 @@ def _get_predicate_roles(verb: Token) -> str:
     proto_roles = srl_roles
     lr_roles = "".join(lr_args)
 
-    available_roles = [dep_roles, srl_roles]
-    
+    if srl_roles.replace("-", ""):
+        available_roles = [dep_roles, srl_roles]
+    else:
+        available_roles = [dep_roles]
+
     return ":".join(available_roles)
 
 def _get_concept_features(tok: Token) -> str:
@@ -989,27 +992,7 @@ def _aux_parse(doc_or_sent, with_lemma=False, with_synset=False):
             "atom2token": atom2token,
             "beta": beta}
 
-
-
-def parse(doc_or_sent, with_lemma=False, with_synset=False, with_srl=True, with_ner=True, with_coref=True):
-    if not all([with_srl, with_ner, with_coref]):
-        if isinstance(doc_or_sent, Doc):
-            doc = doc_or_sent.copy()
-        else:
-            doc = doc_or_sent.doc.copy()
-
-        if not with_srl:
-            doc.srl = {}
-        if not with_ner:
-            doc.ent = ()
-        if not with_coref:
-            doc.coref = {}
-    
-        if isinstance(doc_or_sent, Doc):
-            doc_or_sent = doc
-        else:
-            doc_or_sent = Span(doc, doc_or_sent.start, doc_or_sent.end, label=doc_or_sent.label)
-
+def parse(doc_or_sent, with_lemma=False, with_synset=False):
     data = _aux_parse(doc_or_sent, with_lemma=with_lemma, with_synset=with_synset)
     if isinstance(doc_or_sent, Doc):
         graph = list(data["sent2edge"].values())

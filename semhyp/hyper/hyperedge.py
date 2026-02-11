@@ -131,6 +131,26 @@ class Hyperedge(tuple):
     def simplify(self, with_subtypes=False, with_roles=False, with_morph=False, with_entity=False):
         return Hyperedge(edge.simplify(with_subtypes, with_roles, with_morph, with_entity) for edge in self)
 
+    def reduce(self, with_srl=True, with_coref=True, with_ner=True):
+        fn_reduce = lambda edge: Hyperedge.reduce(edge, with_srl=with_srl, with_coref=with_coref, with_ner=with_ner)
+
+        if self.is_atom():
+            if not with_ner and self.entity():
+                return Atom(self.label(), self.type(), self.roles(), self.morph(), None)
+            if not with_srl:
+                roles = self.roles()
+                if self.mtype() == "P" and roles:
+                    roles = roles[0].replace("-", "")
+                    return Atom(self.label(), self.type(), roles, self.morph(), self.entity())
+            return self
+        
+        elif not with_coref and self[0].type() == "Jc":  # coreference
+            return self[1]
+        elif not with_srl and self[0].mtype() == "P" and "-" in self[0].argroles()[0]:  # srl with implicit argument
+            return Hyperedge([fn_reduce(self[0])] + [fn_reduce(edge) for r, edge in zip(self[0].argroles()[0], self[1:]) if r != "-"])
+        
+        return Hyperedge(fn_reduce(edge) for edge in self)
+
 
 def str2part(s):
     for k, v in atom_part_encoding.items():
