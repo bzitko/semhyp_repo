@@ -4,12 +4,8 @@ __pycache__/
 /.DS_Store
 /demo.html
 /drawings_for_paper.ipynb
-/edge_our_PM.svg
-/hyperedge.svg
+/*.svg
+/*.html
 /misc
-/nl2sh.svg
-/notebook.ipynb
-/notebook2.ipynb
+/notebook*.ipynb
 /test.py
-/textual_annotations.html
-/textual_annotations.svg

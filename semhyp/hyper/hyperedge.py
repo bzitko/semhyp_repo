@@ -26,7 +26,6 @@ def hatom(source):
 
 
 def hedge(source):
-    print(source)
     source = source.replace("(", " ( ").replace(")", " ) ").strip()
     source = source.split()
     
@@ -142,7 +141,8 @@ class Hyperedge(tuple):
                 if self.mtype() == "P" and roles:
                     roles = roles[0].replace("-", "")
                     return Atom(self.label(), self.type(), roles, self.morph(), self.entity())
-            return self
+            
+            return Atom(self.label(), self.type(), self.roles(), self.morph(), self.entity())
         
         elif not with_coref and self[0].type() == "Jc":  # coreference
             return self[1]
@@ -150,6 +150,13 @@ class Hyperedge(tuple):
             return Hyperedge([fn_reduce(self[0])] + [fn_reduce(edge) for r, edge in zip(self[0].argroles()[0], self[1:]) if r != "-"])
         
         return Hyperedge(fn_reduce(edge) for edge in self)
+    
+    def collapse_coref(self):
+        if self.is_atom():
+            return self
+        if self[0].type() == "Jc" and str(self[1]) == str(self[2]):
+            return self[1].collapse_coref()
+        return Hyperedge(edge.collapse_coref() for edge in self)
 
 
 def str2part(s):

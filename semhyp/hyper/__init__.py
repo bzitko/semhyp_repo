@@ -1,4 +1,4 @@
-from .hyperedge import Atom, Hyperedge
+from .hyperedge import Atom, Hyperedge, hatom, hedge
 
 def edge2txt(edge, subedge=None):
 

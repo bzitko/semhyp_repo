@@ -992,13 +992,17 @@ def _aux_parse(doc_or_sent, with_lemma=False, with_synset=False):
             "atom2token": atom2token,
             "beta": beta}
 
-def parse(doc_or_sent, with_lemma=False, with_synset=False):
+def parse(doc_or_sent, with_lemma=False, with_synset=False, collapse_coref=False):
     data = _aux_parse(doc_or_sent, with_lemma=with_lemma, with_synset=with_synset)
     if isinstance(doc_or_sent, Doc):
         graph = list(data["sent2edge"].values())
+        if collapse_coref:
+            graph = [edge.collapse_coref() for edge in graph]
         return graph
     else:
         edge = data["sent2edge"][doc_or_sent]
+        if collapse_coref:
+            edge = edge.collapse_coref()
         return edge
 
 

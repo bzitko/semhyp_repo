@@ -257,9 +257,20 @@ def data2doc(data):
 
     return doc
 
-def read(filename):
+def read(filename, with_hypergraph=False):
     with open(filename, "r", encoding="utf8") as fp:
         txt = fp.read()
         data = txt2data(txt)
         doc = data2doc(data)
+        
+    if with_hypergraph:
+        from .hyper import hedge
+        graph = []
+        for line in txt.split("\n"):
+            if line.startswith("# hyperedge = "):
+                line = line[14:].strip()
+                graph.append(hedge(line))
+        
+        return doc, graph
+    else:
         return doc
