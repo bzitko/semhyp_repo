@@ -917,6 +917,7 @@ def _aux_parse(doc_or_sent, with_lemma=False, with_synset=False):
                     recursion(subedge)
             else:
                 atoms.append(edge)
+        recursion(edge)
         return atoms
 
     def minimum_spanning_edge(edge, span):
@@ -925,7 +926,15 @@ def _aux_parse(doc_or_sent, with_lemma=False, with_synset=False):
         stack = [root_edge]
         while stack:
             edge = stack.pop()
-            edge_tokens = {atom2token[a] for a in _get_all_atoms(edge) if a in atom2token}
+
+            edge_tokens = set()
+            for a in _get_all_atoms(edge):
+                if a in atom2token:
+                    edge_tokens.add(atom2token[a])
+
+
+            # edge_tokens = {atom2token[a] for a in _get_all_atoms(edge) if a in atom2token}
+
             if span_tokens == edge_tokens:
                 return edge
             if not is_atom(edge):

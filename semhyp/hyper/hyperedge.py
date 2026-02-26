@@ -131,25 +131,50 @@ class Hyperedge(tuple):
         return Hyperedge(edge.simplify(with_subtypes, with_roles, with_morph, with_entity) for edge in self)
 
     def reduce(self, with_srl=True, with_coref=True, with_ner=True):
-        fn_reduce = lambda edge: Hyperedge.reduce(edge, with_srl=with_srl, with_coref=with_coref, with_ner=with_ner)
 
-        if self.is_atom():
-            if not with_ner and self.entity():
-                return Atom(self.label(), self.type(), self.roles(), self.morph(), None)
-            if not with_srl:
-                roles = self.roles()
-                if self.mtype() == "P" and roles:
-                    roles = roles[0].replace("-", "")
-                    return Atom(self.label(), self.type(), roles, self.morph(), self.entity())
+        def _reduce_ner(self):
+            fn_reduce = _reduce_ner
+
+            if self.is_atom():
+                if not with_ner and self.entity():
+                    return Atom(self.label(), self.type(), self.roles(), self.morph(), None)
+                if not with_srl:
+                    roles = self.roles()
+                    if self.mtype() == "P" and roles:
+                        roles = roles[0].replace("-", "")
+                        return Atom(self.label(), self.type(), roles, self.morph(), self.entity())
+                return Atom(self.label(), self.type(), self.roles(), self.morph(), self.entity())
             
-            return Atom(self.label(), self.type(), self.roles(), self.morph(), self.entity())
+            return Hyperedge(fn_reduce(edge) for edge in self)
         
-        elif not with_coref and self[0].type() == "Jc":  # coreference
-            return self[1]
-        elif not with_srl and self[0].mtype() == "P" and "-" in self[0].argroles()[0]:  # srl with implicit argument
-            return Hyperedge([fn_reduce(self[0])] + [fn_reduce(edge) for r, edge in zip(self[0].argroles()[0], self[1:]) if r != "-"])
+        def _reduce_coref(self):
+            fn_reduce = _reduce_coref
+
+            if self.is_atom():
+                return Atom(self.label(), self.type(), self.roles(), self.morph(), self.entity())
+            if self[0].type() == "Jc":
+                return self[1]
+            
+            return Hyperedge(fn_reduce(edge) for edge in self)
         
-        return Hyperedge(fn_reduce(edge) for edge in self)
+        def _reduce_srl(self):
+            fn_reduce = _reduce_srl
+
+            if self.is_atom():
+                return Atom(self.label(), self.type(), self.roles(), self.morph(), self.entity())
+            if self[0].mtype() == "P" and "-" in self[0].argroles()[0]:  # srl with implicit argument
+                return Hyperedge([fn_reduce(self[0])] + [fn_reduce(edge) for r, edge in zip(self[0].argroles()[0], self[1:]) if r != "-"])
+            
+            return Hyperedge(fn_reduce(edge) for edge in self)
+
+        if not with_srl:
+            return _reduce_srl(self)
+        if not with_coref:
+            return _reduce_coref(self)
+        if not with_ner:
+            return _reduce_ner(self)
+        else:
+            return self
     
     def collapse_coref(self):
         if self.is_atom():
@@ -157,6 +182,20 @@ class Hyperedge(tuple):
         if self[0].type() == "Jc" and str(self[1]) == str(self[2]):
             return self[1].collapse_coref()
         return Hyperedge(edge.collapse_coref() for edge in self)
+    
+    def reduce_proto(self):
+        if self.is_atom():
+            roles = self.roles()
+            if roles and len(roles) == 3:
+                roles = roles[:-1]
+            if roles and len(roles) == 2 and set(roles[1]) == {"-"}:
+                roles = roles[:-1]
+            morph = self.morph()
+            if morph and len(morph) == 2:
+                morph = morph[:-1]
+            return Atom(self.label(), self.type(), roles, morph, self.entity())
+    
+        return Hyperedge(edge.reduce_proto() for edge in self)
 
 
 def str2part(s):

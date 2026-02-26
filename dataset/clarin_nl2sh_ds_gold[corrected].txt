@@ -667,13 +667,13 @@
 48 0  I        - I      PRON  PRP nsubj 2 - -       -   B-ARG0 -   -      B-MAIN6 -       -           i/Ci
 48 1  've      + have   AUX   VB  aux   2 - have.01 B-V -      -   -      -       -       -           've/Mv.<
 48 2  peeled   + peel   VERB  VBN ROOT  2 - peel.01 -   B-V    -   -      -       -       skin.v.04   peeled/P.so:01:0d.<pf:01
-48 3  the      + the    DET   DT  det   4 - -       -   B-ARG1 -   -      -       B-MAIN8 -           the/Md.<
-48 4  potatoes + potato NOUN  NNS dobj  2 - -       -   I-ARG1 -   -      -       I-MAIN8 potato.n.01 potatoes/Cc..p
+48 3  the      + the    DET   DT  det   4 - -       -   B-ARG1 -   -      -       B-MAIN7 -           the/Md.<
+48 4  potatoes + potato NOUN  NNS dobj  2 - -       -   I-ARG1 -   -      -       I-MAIN7 potato.n.01 potatoes/Cc..p
 48 5  and      + and    CCONJ CC  cc    2 - -       -   -      -   -      -       -       -           and/J
 48 6  I        - I      PRON  PRP nsubj 8 - -       -   -      -   B-ARG0 B-REF6  -       -           i/Ci
 48 7  've      + have   AUX   VB  aux   8 - have.01 -   -      B-V -      -       -       -           've/Mv.<
 48 8  washed   + wash   VERB  VBN conj  2 - wash.01 -   -      -   B-V    -       -       wash.v.02   washed/P.so:01:01.<pf:01234
-48 9  them     - they   PRON  PRP dobj  8 - -       -   -      -   B-ARG1 -       B-REF8  -           them/Ci
+48 9  them     - they   PRON  PRP dobj  8 - -       -   -      -   B-ARG1 -       B-REF7  -           them/Ci
 48 10 .        - .      PUNCT .   punct 8 - -       -   -      -   -      -       -       -           -
 
 # sent_i = 49
@@ -1635,7 +1635,7 @@
 100 33 and            + and            CCONJ CC  cc       30 -      -           -          -      -      -      -      -          -          -          -      -   -      -          -          -       -       -                   and/J
 100 34 went           + go             VERB  VBD conj     30 -      go.02       -          -      -      -      -      -          -          -          B-V    -   -      -          -          -       -       travel.v.01         went/Pd.-x:04:1g.<f:0134
 100 35 into           + into           ADP   IN  prep     34 -      -           -          -      -      -      -      -          -          -          B-ARG4 -   -      -          -          -       -       -                   into/T
-100 36 Basle          - Basle          PROPN NNP pobj     35 B-GPE  -           -          -      -      -      -      -          -          -          I-ARG4 -   -      -          -          -       B-MAIN30 basel.n.01          basle/Cp..s.g
+100 36 Basle          - Basle          PROPN NNP pobj     35 B-GPE  -           -          -      -      -      -      -          -          -          I-ARG4 -   -      -          -          -       B-MAIN29 basel.n.01          basle/Cp..s.g
 100 37 ,              + ,              PUNCT ,   punct    30 -      -           -          -      -      -      -      -          -          -          -      -   -      -          -          -       -       -                   -
 100 38 and            + and            CCONJ CC  cc       34 -      -           -          -      -      -      -      -          -          -          -      -   -      -          -          -       -       -                   and/J
 100 39 because        + because        SCONJ IN  mark     42 -      -           -          -      -      -      -      -          -          -          -      -   -      B-ARGM-CAU -          -       -       -                   because/T
@@ -1650,7 +1650,7 @@
 100 48 stay           + stay           VERB  VB  xcomp    46 -      stay.01     -          -      -      -      -      -          -          -          -      -   -      I-ARG1     B-V        -       -       bide.v.01           stay/P.-x?:1tl:1tl.-i:123
 100 49 the            + the            DET   DT  det      50 B-TIME -           -          -      -      -      -      -          -          -          -      -   -      I-ARG1     B-ARGM-TMP -       -       -                   the/Md.<..t
 100 50 night          + night          NOUN  NN  npadvmod 48 I-TIME -           -          -      -      -      -      -          -          -          -      -   -      I-ARG1     I-ARGM-TMP -       -       night.n.01          night/Cc..s.t
-100 51 there          - there          ADV   RB  advmod   48 -      -           -          -      -      -      -      -          -          -          -      -   -      I-ARG1     B-ARGM-LOC -       B-REF30  there.r.01          there/M
+100 51 there          - there          ADV   RB  advmod   48 -      -           -          -      -      -      -      -          -          -          -      -   -      I-ARG1     B-ARGM-LOC -       B-REF29  there.r.01          there/M
 100 52 .              - .              PUNCT .   punct    3  -      -           -          -      -      -      -      -          -          -          -      -   -      -          -          -       -       -                   -
 
 # sent_i = 101
@@ -1964,9 +1964,9 @@
 118 1  no    + no    DET   DT  det   2 - -       B-ARG0 -   I-ARGM-CAU B-MAIN33 -       no.a.01   no/Md.<
 118 2  one   + one   NOUN  NN  nsubj 3 - -       I-ARG0 -   I-ARGM-CAU I-MAIN33 -       one.n.02  one/Cc..s
 118 3  asked + ask   VERB  VBD advcl 9 - ask.01  B-V    -   I-ARGM-CAU -       -       ask.v.01  asked/P.so:02:0g.<f:0123
-118 4  me    - I     PRON  PRP dobj  3 - -       B-ARG2 -   I-ARGM-CAU -       B-REF35  -         me/Ci
+118 4  me    - I     PRON  PRP dobj  3 - -       B-ARG2 -   I-ARGM-CAU -       B-REF34  -         me/Ci
 118 5  ,     + ,     PUNCT ,   punct 9 - -       -      -   -          -       -       -         -
-118 6  I     + I     PRON  PRP nsubj 9 - -       -      -   B-ARG0     -       B-MAIN35 -         i/Ci
+118 6  I     + I     PRON  PRP nsubj 9 - -       -      -   B-ARG0     -       B-MAIN34 -         i/Ci
 118 7  did   - do    AUX   VBD aux   9 - do.01   -      B-V -          -       -       -         did/Mv.<
 118 8  n't   + not   PART  RB  neg   9 - -       -      -   B-ARGM-NEG -       -       -         n't/Mn.<
 118 9  tell  + tell  VERB  VB  ROOT  9 - tell.01 -      -   B-V        -       -       tell.v.02 tell/Pd.xso:c02:c0g.-i:012
@@ -2192,7 +2192,7 @@
 131 0  We    + we    PRON  PRP  nsubj  1  - -       B-ARG0 -          B-MAIN39 -       -          we/Ci
 131 1  knew  + know  VERB  VBD  ccomp  8  - know.01 B-V    -          -       -       know.v.01  knew/P.sx:01:01.<f:012
 131 2  about + about ADP   IN   prep   1  - -       B-ARG1 -          -       -       -          about/T
-131 3  their + their PRON  PRP$ poss   4  - -       I-ARG1 -          -       B-MAIN41 -          their/Mp
+131 3  their + their PRON  PRP$ poss   4  - -       I-ARG1 -          -       B-MAIN40 -          their/Mp
 131 4  plans - plan  NOUN  NNS  pobj   2  - -       I-ARG1 -          -       -       plan.n.01  plans/Cc..p
 131 5  ,     + ,     PUNCT ,    punct  8  - -       -      -          -       -       -          -
 131 6  so    + so    ADV   RB   advmod 8  - -       -      B-ARGM-ADV -       -       so.r.02    so/M
@@ -2200,7 +2200,7 @@
 131 8  were  + be    AUX   VBD  ROOT   8  - be.01   -      B-V        -       -       be.v.01    were/Pd.r?sc:-r12:-r1h.<f:12
 131 9  ready + ready ADJ   JJ   acomp  8  - -       -      B-ARG2     -       -       ready.a.01 ready/Ca
 131 10 for   + for   ADP   IN   prep   9  - -       -      I-ARG2     -       -       -          for/Br
-131 11 them  - they  PRON  PRP  pobj   10 - -       -      I-ARG2     -       B-REF41  -          them/Ci
+131 11 them  - they  PRON  PRP  pobj   10 - -       -      I-ARG2     -       B-REF40  -          them/Ci
 131 12 .     - .     PUNCT .    punct  8  - -       -      -          -       -       -          -
 
 # sent_i = 132
@@ -4901,12 +4901,12 @@
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 coref1 coref2 synset atoms
 309 0 I     + I     PRON  PRP  nsubj  1 - -       B-ARG0     B-ARG0     B-MAIN76 -       -          i/Ci
 309 1 found + find  VERB  VBD  ROOT   1 - find.01 B-V        -          -       -       find.v.03  found/Pd.sor:01i:01i.<f:012
-309 2 my    + my    PRON  PRP$ poss   3 - -       B-ARG1     -          B-REF76  B-MAIN78 -          my/Mp
-309 3 keys  + key   NOUN  NNS  dobj   1 - -       I-ARG1     -          -       I-MAIN78 key.n.01   keys/Cc..p
+309 2 my    + my    PRON  PRP$ poss   3 - -       B-ARG1     -          B-REF76  B-MAIN77 -          my/Mp
+309 3 keys  + key   NOUN  NNS  dobj   1 - -       I-ARG1     -          -       I-MAIN77 key.n.01   keys/Cc..p
 309 4 only  + only  ADV   RB   advmod 6 - -       B-ARGM-PRP B-ARGM-ADV -       -       only.r.03  only/M
 309 5 to    + to    PART  TO   aux    6 - -       I-ARGM-PRP -          -       -       -          to/Mi.<
 309 6 lose  + lose  VERB  VB   xcomp  1 - lose.02 I-ARGM-PRP B-V        -       -       lose.v.01  lose/P.-?o?:0r1t:0r1t.-i:0123
-309 7 them  + they  PRON  PRP  dobj   6 - -       I-ARGM-PRP B-ARG1     -       B-REF78  -          them/Ci
+309 7 them  + they  PRON  PRP  dobj   6 - -       I-ARGM-PRP B-ARG1     -       B-REF77  -          them/Ci
 309 8 again - again ADV   RB   advmod 6 - -       I-ARGM-PRP B-ARGM-TMP -       -       again.r.01 again/M
 309 9 .     - .     PUNCT .    punct  1 - -       -          -          -       -       -          -
 
@@ -6726,15 +6726,15 @@
 # hyperedge builder = (431.8/Pd.xso?x:r01d2:r01dd.<f:012 (431.0/P.ox-:120:1d0.|pg:0123 (431.1/Md.< 431.2/Cc..s) (431.3/T ((+/Jc.rm.rr 431.4/Mp 431.7/Ci) 431.5/Cc..s)) 431.7/Ci) 431.7/Ci (+/Jc.rm.rc 431.9/Ci (431.1/Md.< 431.2/Cc..s)) 431.10/M (431.11/T (431.12/Md.< 431.13/Cc..s)))
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 coref1 coref2 synset atoms
 431 0  Taking  + take    VERB  VBG  advcl  8  - take.01 B-V    B-ARGM-ADV -       -       take.v.04    taking/P.ox-:120:1d0.|pg:0123
-431 1  a       + a       DET   DT   det    2  - -       B-ARG1 I-ARGM-ADV -       B-MAIN101 -            a/Md.<
-431 2  note    + note    NOUN  NN   dobj   0  - -       I-ARG1 I-ARGM-ADV -       I-MAIN101 note.n.02    note/Cc..s
+431 1  a       + a       DET   DT   det    2  - -       B-ARG1 I-ARGM-ADV -       B-MAIN100 -            a/Md.<
+431 2  note    + note    NOUN  NN   dobj   0  - -       I-ARG1 I-ARGM-ADV -       I-MAIN100 note.n.02    note/Cc..s
 431 3  from    + from    ADP   IN   prep   0  - -       B-ARG2 I-ARGM-ADV -       -       -            from/T
 431 4  her     + her     PRON  PRP$ poss   5  - -       I-ARG2 I-ARGM-ADV B-REF99  -       -            her/Mp
 431 5  purse   - purse   NOUN  NN   pobj   3  - -       I-ARG2 I-ARGM-ADV -       -       bag.n.04     purse/Cc..s
 431 6  ,       + ,       PUNCT ,    punct  8  - -       -      -          -       -       -            -
 431 7  she     + she     PRON  PRP  nsubj  8  - -       B-ARG0 B-ARG0     B-MAIN99 -       -            she/Ci
 431 8  slammed + slam    VERB  VBD  ROOT   8  - slam.01 -      B-V        -       -       slam.v.04    slammed/Pd.xso?x:r01d2:r01dd.<f:012
-431 9  it      + it      PRON  PRP  dobj   8  - -       -      B-ARG1     -       B-REF101  -            it/Ci
+431 9  it      + it      PRON  PRP  dobj   8  - -       -      B-ARG1     -       B-REF100  -            it/Ci
 431 10 down    + down    ADP   RP   advmod 8  - -       -      B-ARGM-DIR -       -       down.r.01    down/M
 431 11 on      + on      ADP   IN   prep   8  - -       -      B-ARG2     -       -       -            on/T
 431 12 the     + the     DET   DT   det    13 - -       -      I-ARG2     -       -       -            the/Md.<
@@ -6850,17 +6850,17 @@
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 coref1 coref2 synset atoms
 438 0  Having   + have     AUX   VBG  aux   1  - have.01  B-V -      B-ARGM-PRD -          -       -       -             having/Mv.<
 438 1  lost     + lose     VERB  VBN  advcl 6  - lose.02  -   B-V    I-ARGM-PRD -          -       -       lose.v.01     lost/P.o-:10:10.<pf:0123
-438 2  my       + my       PRON  PRP$ poss  3  - -        -   B-ARG1 I-ARGM-PRD -          B-REF10604  B-MAIN106 -             my/Mp
-438 3  passport - passport NOUN  NN   dobj  1  - -        -   I-ARG1 I-ARGM-PRD -          -       I-MAIN106 passport.n.02 passport/Cc..s
+438 2  my       + my       PRON  PRP$ poss  3  - -        -   B-ARG1 I-ARGM-PRD -          B-REF104  B-MAIN105 -             my/Mp
+438 3  passport - passport NOUN  NN   dobj  1  - -        -   I-ARG1 I-ARGM-PRD -          -       I-MAIN105 passport.n.02 passport/Cc..s
 438 4  ,        + ,        PUNCT ,    punct 6  - -        -   -      -          -          -       -       -             -
-438 5  I        + I        PRON  PRP  nsubj 6  - -        -   B-ARG0 -          B-ARG0     B-MAIN10604 -       -             i/Ci
+438 5  I        + I        PRON  PRP  nsubj 6  - -        -   B-ARG0 -          B-ARG0     B-MAIN104 -       -             i/Ci
 438 6  have     + have     VERB  VBP  ROOT  6  - have.02  -   -      B-V        B-ARGM-MOD -       -       -             have/Pd.xsr:h--:!--.|f
 438 7  to       + to       PART  TO   aux   8  - -        -   -      -          -          -       -       -             to/Mi.<
 438 8  apply    + apply    VERB  VB   xcomp 6  - apply.01 -   -      -          B-V        -       -       apply.v.03    apply/P.-x:01:01.-i:012
 438 9  for      + for      ADP   IN   prep  8  - -        -   -      -          B-ARG1     -       -       -             for/T
-438 10 a        + a        DET   DT   det   12 - -        -   -      -          I-ARG1     -       B-REF106  -             a/Md.<
-438 11 new      + new      ADJ   JJ   amod  12 - -        -   -      -          I-ARG1     -       I-REF106  new.a.01      new/Ma.<
-438 12 one      - one      NUM   CD   pobj  9  - -        -   -      -          I-ARG1     -       I-REF106  one.n.02      one/C#
+438 10 a        + a        DET   DT   det   12 - -        -   -      -          I-ARG1     -       B-REF105  -             a/Md.<
+438 11 new      + new      ADJ   JJ   amod  12 - -        -   -      -          I-ARG1     -       I-REF105  new.a.01      new/Ma.<
+438 12 one      - one      NUM   CD   pobj  9  - -        -   -      -          I-ARG1     -       I-REF105  one.n.02      one/C#
 438 13 .        - .        PUNCT .    punct 6  - -        -   -      -          -          -       -       -             -
 
 # sent_i = 439
@@ -7400,29 +7400,29 @@
 # hyperedge = (and/J (felt/Pd.sr:01:01.<f:012 i/Ci ((could/Mm.< afford/P.so:01:01.-i:01) i/Ci (a/Md.< (bigger/Mc.< car/Cc..s)))) (was/Pd.sx?:12s:1hs.<f:12 (+/Jr.ma (the/Md.< one/Cc..s) (('d/Mm.< got/P.-s:10:10.<pf:01) (the/Md.< one/Cc..s) i/Ci)) (on/T ((+/Jc.rm.rc its/Mp (the/Md.< one/Cc..s)) (last/Ma.< legs/Cc..p))) really/M))
 # hyperedge builder = (473.9/J (473.1/Pd.sr:01:01.<f:012 473.0/Ci ((473.3/Mm.< 473.4/P.so:01:01.-i:01) 473.2/Ci (473.5/Md.< (473.6/Mc.< 473.7/Cc..s)))) (473.15/Pd.sx?:12s:1hs.<f:12 (+/Jr.ma (473.10/Md.< 473.11/Cc..s) ((473.13/Mm.< 473.14/P.-s:10:10.<pf:01) (473.10/Md.< 473.11/Cc..s) 473.12/Ci)) (473.16/T ((+/Jc.rm.rc 473.17/Mp (473.10/Md.< 473.11/Cc..s)) (473.18/Ma.< 473.19/Cc..p))) 473.21/M))
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 srl5 srl6 coref1 coref2 synset atoms
-473 0  I      + I      PRON  PRP  nsubj  1  - -         B-ARG0 -   -          -   -      -          B-MAIN11412 -       -             i/Ci
-473 1  felt   + feel   VERB  VBD  ROOT   1  - feel.02   B-V    -   -          -   -      -          -       -       find.v.05     felt/Pd.sr:01:01.<f:012
-473 2  I      + I      PRON  PRP  nsubj  4  - -         B-ARG1 -   B-ARG0     -   -      -          B-REF11412  -       -             i/Ci
-473 3  could  + could  AUX   MD   aux    4  - -         I-ARG1 B-V B-ARGM-MOD -   -      -          -       -       -             could/Mm.<
-473 4  afford + afford VERB  VB   ccomp  1  - afford.01 I-ARG1 -   B-V        -   -      -          -       -       afford.v.01   afford/P.so:01:01.-i:01
-473 5  a      + a      DET   DT   det    7  - -         I-ARG1 -   B-ARG1     -   -      -          -       -       -             a/Md.<
-473 6  bigger + big    ADJ   JJR  amod   7  - -         I-ARG1 -   I-ARG1     -   -      -          -       -       large.a.01    bigger/Mc.<
-473 7  car    - car    NOUN  NN   dobj   4  - -         I-ARG1 -   I-ARG1     -   -      -          -       -       car.n.01      car/Cc..s
-473 8  ,      + ,      PUNCT ,    punct  1  - -         -      -   -          -   -      -          -       -       -             -
-473 9  and    + and    CCONJ CC   cc     1  - -         -      -   -          -   -      -          -       -       -             and/J
-473 10 the    + the    DET   DT   det    11 - -         -      -   -          -   B-ARG1 B-ARG1     -       B-MAIN114 -             the/Md.<
-473 11 one    + one    NOUN  NN   nsubj  15 - -         -      -   -          -   I-ARG1 I-ARG1     -       I-MAIN114 one.n.02      one/Cc..s
-473 12 I      - I      PRON  PRP  nsubj  14 - -         -      -   -          -   B-ARG0 I-ARG1     B-REF11412  -       -             i/Ci
-473 13 'd     + 'd     AUX   MD   aux    14 - -         -      -   -          B-V -      I-ARG1     -       -       -             'd/Mm.<
-473 14 got    + get    VERB  VBN  relcl  11 - get.02    -      -   -          -   B-V    I-ARG1     -       -       get.v.01      got/P.-s:10:10.<pf:01
-473 15 was    + be     VERB  VBD  conj   1  - be.01     -      -   -          -   -      B-V        -       -       be.v.01       was/Pd.sx?:12s:1hs.<f:12
-473 16 on     + on     ADP   IN   prep   15 - -         -      -   -          -   -      B-ARG2     -       -       fail.v.04     on/T
-473 17 its    + its    PRON  PRP$ poss   19 - -         -      -   -          -   -      I-ARG2     -       B-REF114  fail.v.04     its/Mp
-473 18 last   + last   ADJ   JJ   amod   19 - -         -      -   -          -   -      I-ARG2     -       -       fail.v.04     last/Ma.<
-473 19 legs   - leg    NOUN  NNS  pobj   16 - -         -      -   -          -   -      I-ARG2     -       -       fail.v.04     legs/Cc..p
-473 20 ,      + ,      PUNCT ,    punct  15 - -         -      -   -          -   -      -          -       -       -             -
-473 21 really - really ADV   RB   advmod 15 - -         -      -   -          -   -      B-ARGM-DIS -       -       in_truth.r.01 really/M
-473 22 .      - .      PUNCT .    punct  15 - -         -      -   -          -   -      -          -       -       -             -
+473 0  I      + I      PRON  PRP  nsubj  1  - -         B-ARG0 -   -          -   -      -          B-MAIN112 -         -             i/Ci
+473 1  felt   + feel   VERB  VBD  ROOT   1  - feel.02   B-V    -   -          -   -      -          -         -         find.v.05     felt/Pd.sr:01:01.<f:012
+473 2  I      + I      PRON  PRP  nsubj  4  - -         B-ARG1 -   B-ARG0     -   -      -          B-REF112  -         -             i/Ci
+473 3  could  + could  AUX   MD   aux    4  - -         I-ARG1 B-V B-ARGM-MOD -   -      -          -         -         -             could/Mm.<
+473 4  afford + afford VERB  VB   ccomp  1  - afford.01 I-ARG1 -   B-V        -   -      -          -         -         afford.v.01   afford/P.so:01:01.-i:01
+473 5  a      + a      DET   DT   det    7  - -         I-ARG1 -   B-ARG1     -   -      -          -         -         -             a/Md.<
+473 6  bigger + big    ADJ   JJR  amod   7  - -         I-ARG1 -   I-ARG1     -   -      -          -         -         large.a.01    bigger/Mc.<
+473 7  car    - car    NOUN  NN   dobj   4  - -         I-ARG1 -   I-ARG1     -   -      -          -         -         car.n.01      car/Cc..s
+473 8  ,      + ,      PUNCT ,    punct  1  - -         -      -   -          -   -      -          -         -         -             -
+473 9  and    + and    CCONJ CC   cc     1  - -         -      -   -          -   -      -          -         -         -             and/J
+473 10 the    + the    DET   DT   det    11 - -         -      -   -          -   B-ARG1 B-ARG1     -         B-MAIN113 -             the/Md.<
+473 11 one    + one    NOUN  NN   nsubj  15 - -         -      -   -          -   I-ARG1 I-ARG1     -         I-MAIN113 one.n.02      one/Cc..s
+473 12 I      - I      PRON  PRP  nsubj  14 - -         -      -   -          -   B-ARG0 I-ARG1     B-REF112  -         -             i/Ci
+473 13 'd     + 'd     AUX   MD   aux    14 - -         -      -   -          B-V -      I-ARG1     -         -         -             'd/Mm.<
+473 14 got    + get    VERB  VBN  relcl  11 - get.02    -      -   -          -   B-V    I-ARG1     -         -         get.v.01      got/P.-s:10:10.<pf:01
+473 15 was    + be     VERB  VBD  conj   1  - be.01     -      -   -          -   -      B-V        -         -         be.v.01       was/Pd.sx?:12s:1hs.<f:12
+473 16 on     + on     ADP   IN   prep   15 - -         -      -   -          -   -      B-ARG2     -         -         fail.v.04     on/T
+473 17 its    + its    PRON  PRP$ poss   19 - -         -      -   -          -   -      I-ARG2     -         B-REF113  fail.v.04     its/Mp
+473 18 last   + last   ADJ   JJ   amod   19 - -         -      -   -          -   -      I-ARG2     -         -         fail.v.04     last/Ma.<
+473 19 legs   - leg    NOUN  NNS  pobj   16 - -         -      -   -          -   -      I-ARG2     -         -         fail.v.04     legs/Cc..p
+473 20 ,      + ,      PUNCT ,    punct  15 - -         -      -   -          -   -      -          -         -         -             -
+473 21 really - really ADV   RB   advmod 15 - -         -      -   -          -   -      B-ARGM-DIS -         -         in_truth.r.01 really/M
+473 22 .      - .      PUNCT .    punct  15 - -         -      -   -          -   -      -          -         -         -             -
 
 # sent_i = 474
 # sent = And what other stamps do you like besides Polish ones?
@@ -8454,19 +8454,19 @@
 # hyperedge = (('d/Mm.< tell/Pd.siox:021r:0g1r.-i:012) i/Ci you/Ci (the/Md.< answer/Cc..s) (if/T (knew/P.sr:01:01.<f:012 i/Ci (was/P.cs:21:h1.<f:12 what/Cw (+/Jc.rm.rc it/Ci (the/Md.< answer/Cc..s))))))
 # hyperedge builder = ((542.1/Mm.< 542.2/Pd.siox:021r:0g1r.-i:012) 542.0/Ci 542.3/Ci (542.4/Md.< 542.5/Cc..s) (542.6/T (542.8/P.sr:01:01.<f:012 542.7/Ci (542.11/P.cs:21:h1.<f:12 542.9/Cw (+/Jc.rm.rc 542.10/Ci (542.4/Md.< 542.5/Cc..s))))))
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 coref1 coref2 synset atoms
-542 0  I      - I      PRON  PRP nsubj  2  - -       -   B-ARG0     -      -      B-MAIN12927 -       -             i/Ci
-542 1  'd     + 'd     AUX   MD  aux    2  - -       B-V B-ARGM-MOD -      -      -       -       -             'd/Mm.<
-542 2  tell   + tell   VERB  VB  ROOT   2  - tell.01 -   B-V        -      -      -       -       tell.v.02     tell/Pd.siox:021r:0g1r.-i:012
-542 3  you    + you    PRON  PRP dative 2  - -       -   B-ARG2     -      -      -       -       -             you/Ci
-542 4  the    + the    DET   DT  det    5  - -       -   B-ARG1     -      -      -       B-MAIN129 -             the/Md.<
-542 5  answer + answer NOUN  NN  dobj   2  - -       -   I-ARG1     -      -      -       I-MAIN129 solution.n.02 answer/Cc..s
-542 6  if     + if     SCONJ IN  mark   8  - -       -   B-ARGM-ADV -      -      -       -       -             if/T
-542 7  I      + I      PRON  PRP nsubj  8  - -       -   I-ARGM-ADV B-ARG0 -      B-REF12927  -       -             i/Ci
-542 8  knew   + know   VERB  VBD advcl  2  - know.01 -   I-ARGM-ADV B-V    -      -       -       know.v.01     knew/P.sr:01:01.<f:012
-542 9  what   + what   PRON  WP  attr   11 - -       -   I-ARGM-ADV B-ARG1 B-ARG2 -       -       -             what/Cw
-542 10 it     + it     PRON  PRP nsubj  11 - -       -   I-ARGM-ADV I-ARG1 B-ARG1 -       B-REF129  -             it/Ci
-542 11 was    - be     AUX   VBD ccomp  8  - be.01   -   I-ARGM-ADV I-ARG1 B-V    -       -       be.v.01       was/P.cs:21:h1.<f:12
-542 12 .      - .      PUNCT .   punct  2  - -       -   -          -      -      -       -       -             -
+542 0  I      - I      PRON  PRP nsubj  2  - -       -   B-ARG0     -      -      B-MAIN127 -         -             i/Ci
+542 1  'd     + 'd     AUX   MD  aux    2  - -       B-V B-ARGM-MOD -      -      -         -         -             'd/Mm.<
+542 2  tell   + tell   VERB  VB  ROOT   2  - tell.01 -   B-V        -      -      -         -         tell.v.02     tell/Pd.siox:021r:0g1r.-i:012
+542 3  you    + you    PRON  PRP dative 2  - -       -   B-ARG2     -      -      -         -         -             you/Ci
+542 4  the    + the    DET   DT  det    5  - -       -   B-ARG1     -      -      -         B-MAIN128 -             the/Md.<
+542 5  answer + answer NOUN  NN  dobj   2  - -       -   I-ARG1     -      -      -         I-MAIN128 solution.n.02 answer/Cc..s
+542 6  if     + if     SCONJ IN  mark   8  - -       -   B-ARGM-ADV -      -      -         -         -             if/T
+542 7  I      + I      PRON  PRP nsubj  8  - -       -   I-ARGM-ADV B-ARG0 -      B-REF127  -         -             i/Ci
+542 8  knew   + know   VERB  VBD advcl  2  - know.01 -   I-ARGM-ADV B-V    -      -         -         know.v.01     knew/P.sr:01:01.<f:012
+542 9  what   + what   PRON  WP  attr   11 - -       -   I-ARGM-ADV B-ARG1 B-ARG2 -         -         -             what/Cw
+542 10 it     + it     PRON  PRP nsubj  11 - -       -   I-ARGM-ADV I-ARG1 B-ARG1 -         B-REF128  -             it/Ci
+542 11 was    - be     AUX   VBD ccomp  8  - be.01   -   I-ARGM-ADV I-ARG1 B-V    -         -         be.v.01       was/P.cs:21:h1.<f:12
+542 12 .      - .      PUNCT .   punct  2  - -       -   -          -      -      -         -         -             -
 
 # sent_i = 543
 # sent = If the sun was shining, everything would be perfect.
@@ -9333,21 +9333,21 @@
 # hyperedge builder = (588.9/Pd.rsr:-01:-01.<f:0123 ((588.2/Mm.< 588.3/Pd.so:01:01.-i:012) 588.1/Ci (588.4/Md.< 588.5/Cc..s)) 588.8/Ci (588.11/P.sr:--:--.<f (+/Jc.rm.rr 588.10/Ci 588.1/Ci) ((588.12/Mi.< 588.13/P.-o:01:01.-i:012) (+/Jc.rm.rr 588.10/Ci 588.1/Ci) (588.14/Md.< 588.15/Cc..s))))
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 srl5 coref1 coref2 synset atoms
 588 0  "       - "       PUNCT ``  punct 9  - -          -   -          -      -   -          -       -       -            -
-588 1  We      + we      PRON  PRP nsubj 3  - -          -   B-ARG0     -      -   -          B-MAIN15351 -       -            we/Ci
+588 1  We      + we      PRON  PRP nsubj 3  - -          -   B-ARG0     -      -   -          B-MAIN151 -       -            we/Ci
 588 2  must    + must    AUX   MD  aux   3  - -          B-V B-ARGM-MOD -      -   -          -       -       -            must/Mm.<
 588 3  replace + replace VERB  VB  ccomp 9  - replace.01 -   B-V        -      -   -          -       -       replace.v.01 replace/Pd.so:01:01.-i:012
-588 4  the     + the     DET   DT  det   5  - -          -   B-ARG1     -      -   -          -       B-MAIN153 -            the/Md.<
-588 5  cooker  - cooker  NOUN  NN  dobj  3  - -          -   I-ARG1     -      -   -          -       I-MAIN153 cooker.n.01  cooker/Cc..s
+588 4  the     + the     DET   DT  det   5  - -          -   B-ARG1     -      -   -          -       B-MAIN152 -            the/Md.<
+588 5  cooker  - cooker  NOUN  NN  dobj  3  - -          -   I-ARG1     -      -   -          -       I-MAIN152 cooker.n.01  cooker/Cc..s
 588 6  .       - .       PUNCT .   punct 3  - -          -   -          -      -   -          -       -       -            -
 588 7  "       + "       PUNCT ''  punct 9  - -          -   -          -      -   -          -       -       -            -
 588 8  she     + she     PRON  PRP nsubj 9  - -          -   -          B-ARG0 -   -          -       -       -            she/Ci
 588 9  said    + say     VERB  VBD ROOT  9  - say.01     -   -          B-V    -   -          -       -       state.v.01   said/Pd.rsr:-01:-01.<f:0123
-588 10 they    + they    PRON  PRP nsubj 11 - -          -   -          B-ARG1 -   B-ARG0     B-REF15351  -       -            they/Ci
+588 10 they    + they    PRON  PRP nsubj 11 - -          -   -          B-ARG1 -   B-ARG0     B-REF151  -       -            they/Ci
 588 11 had     + have    AUX   VBD ccomp 9  - have.02    -   -          I-ARG1 B-V B-ARGM-MOD -       -       -            had/P.sr:--:--.<f
 588 12 to      + to      PART  TO  aux   13 - -          -   -          I-ARG1 -   -          -       -       -            to/Mi.<
 588 13 replace + replace VERB  VB  xcomp 11 - replace.01 -   -          I-ARG1 -   B-V        -       -       replace.v.01 replace/P.-o:01:01.-i:012
-588 14 the     + the     DET   DT  det   15 - -          -   -          I-ARG1 -   B-ARG1     -       B-REF153  -            the/Md.<
-588 15 cooker  - cooker  NOUN  NN  dobj  13 - -          -   -          I-ARG1 -   I-ARG1     -       I-REF153  cooker.n.01  cooker/Cc..s
+588 14 the     + the     DET   DT  det   15 - -          -   -          I-ARG1 -   B-ARG1     -       B-REF152  -            the/Md.<
+588 15 cooker  - cooker  NOUN  NN  dobj  13 - -          -   -          I-ARG1 -   I-ARG1     -       I-REF152  cooker.n.01  cooker/Cc..s
 588 16 .       - .       PUNCT .   punct 9  - -          -   -          -      -   -          -       -       -            -
 
 # sent_i = 589
@@ -9357,18 +9357,18 @@
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 srl5 coref1 coref2 synset atoms
 589 0  "      - "      PUNCT ``  punct 8  - -      -   -          -          -   -          -       -       -        -
 589 1  Shall  + Shall  AUX   MD  aux   3  - -      B-V B-ARGM-MOD B-ARGM-DSP -   -          -       -       -        shall/Mm.<
-589 2  I      + I      PRON  PRP nsubj 3  - -      -   B-ARG0     I-ARGM-DSP -   -          B-MAIN15553 -       -        i/Ci
+589 2  I      + I      PRON  PRP nsubj 3  - -      -   B-ARG0     I-ARGM-DSP -   -          B-MAIN153 -       -        i/Ci
 589 3  try    + try    VERB  VB  ccomp 8  - try.01 -   B-V        I-ARGM-DSP -   -          -       -       try.v.01 try/P?.so:01:01.-i:01
-589 4  it     - it     PRON  PRP dobj  3  - -      -   B-ARG1     I-ARGM-DSP -   -          -       B-MAIN155 -        it/Ci
+589 4  it     - it     PRON  PRP dobj  3  - -      -   B-ARG1     I-ARGM-DSP -   -          -       B-MAIN154 -        it/Ci
 589 5  ?      - ?      PUNCT .   punct 3  - -      -   -          -          -   -          -       -       -        -
 589 6  "      + "      PUNCT ''  punct 8  - -      -   -          -          -   -          -       -       -        -
-589 7  she    + she    PRON  PRP nsubj 8  - -      -   -          B-ARG0     -   -          B-REF15553  -       -        she/Ci
+589 7  she    + she    PRON  PRP nsubj 8  - -      -   -          B-ARG0     -   -          B-REF153  -       -        she/Ci
 589 8  asked  + ask    VERB  VBD ROOT  8  - ask.01 -   -          B-V        -   -          -       -       ask.v.01 asked/Pd.rsr:?01:?01.<f:0123
 589 9  if     + if     SCONJ IN  mark  12 - -      -   -          B-ARG1     -   -          -       -       -        if/T
-589 10 she    + she    PRON  PRP nsubj 12 - -      -   -          I-ARG1     -   B-ARG0     B-REF15553  -       -        she/Ci
+589 10 she    + she    PRON  PRP nsubj 12 - -      -   -          I-ARG1     -   B-ARG0     B-REF153  -       -        she/Ci
 589 11 should + should AUX   MD  aux   12 - -      -   -          I-ARG1     B-V B-ARGM-MOD -       -       -        should/Mm.<
 589 12 try    + try    VERB  VB  ccomp 8  - try.01 -   -          I-ARG1     -   B-V        -       -       try.v.01 try/P.so:01:01.-i:01
-589 13 it     - it     PRON  PRP dobj  12 - -      -   -          I-ARG1     -   B-ARG1     -       B-REF155  -        it/Ci
+589 13 it     - it     PRON  PRP dobj  12 - -      -   -          I-ARG1     -   B-ARG1     -       B-REF154  -        it/Ci
 589 14 .      - .      PUNCT .   punct 8  - -      -   -          -          -   -          -       -       -        -
 
 # sent_i = 590
@@ -9377,23 +9377,23 @@
 # hyperedge builder = (590.10/Pd.rsr:?01:?01.<f:0123 ((590.2/Mm.< 590.3/Pd.sox:01t:01t.-i:01234) 590.1/Ci 590.4/Ci (590.5/Tt 590.6/Cp..s.d)) (+/Jc.rm.rr 590.9/Ci 590.1/Ci) (590.11/T ((590.13/Mm.< 590.14/P.sox:01t:01t.-i:01234) (+/Jc.rm.rr 590.12/Ci 590.1/Ci) 590.15/Ci (590.16/Tt 590.17/Cp..s.d))))
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 srl5 coref1 coref2 coref3 synset atoms
 590 0  "      - "      PUNCT ``  punct 10 -      -      -   -          -          -   -          -       -       -       -            -
-590 1  I      + I      PRON  PRP nsubj 3  -      -      -   B-ARG0     B-ARGM-DSP -   -          B-MAIN15755 -       -       -            i/Ci
+590 1  I      + I      PRON  PRP nsubj 3  -      -      -   B-ARG0     B-ARGM-DSP -   -          B-MAIN155 -       -       -            i/Ci
 590 2  can    + can    AUX   MD  aux   3  -      -      B-V B-ARGM-MOD I-ARGM-DSP -   -          -       -       -       -            can/Mm.<
 590 3  do     + do     VERB  VB  ccomp 10 -      do.02  -   B-V        I-ARGM-DSP -   -          -       -       -       perform.v.01 do/Pd.sox:01t:01t.-i:01234
-590 4  it     + it     PRON  PRP dobj  3  -      -      -   B-ARG1     I-ARGM-DSP -   -          -       B-MAIN157 -       -            it/Ci
+590 4  it     + it     PRON  PRP dobj  3  -      -      -   B-ARG1     I-ARGM-DSP -   -          -       B-MAIN156 -       -            it/Ci
 590 5  on     + on     ADP   IN  prep  3  -      -      -   B-ARGM-TMP I-ARGM-DSP -   -          -       -       -       -            on/Tt
-590 6  Monday - Monday PROPN NNP pobj  5  B-DATE -      -   I-ARGM-TMP I-ARGM-DSP -   -          -       -       B-MAIN159 monday.n.01  monday/Cp..s.d
+590 6  Monday - Monday PROPN NNP pobj  5  B-DATE -      -   I-ARGM-TMP I-ARGM-DSP -   -          -       -       B-MAIN157 monday.n.01  monday/Cp..s.d
 590 7  .      - .      PUNCT .   punct 3  -      -      -   -          I-ARGM-DSP -   -          -       -       -       -            -
 590 8  "      + "      PUNCT ''  punct 10 -      -      -   -          I-ARGM-DSP -   -          -       -       -       -            -
-590 9  she    + she    PRON  PRP nsubj 10 -      -      -   -          B-ARG0     -   -          B-REF15755  -       -       -            she/Ci
+590 9  she    + she    PRON  PRP nsubj 10 -      -      -   -          B-ARG0     -   -          B-REF155  -       -       -            she/Ci
 590 10 said   + say    VERB  VBD ROOT  10 -      say.01 -   -          B-V        -   -          -       -       -       state.v.01   said/Pd.rsr:?01:?01.<f:0123
 590 11 that   + that   SCONJ IN  mark  14 -      -      -   -          B-ARG1     -   -          -       -       -       -            that/T
-590 12 she    + she    PRON  PRP nsubj 14 -      -      -   -          I-ARG1     -   B-ARG0     B-REF15755  -       -       -            she/Ci
+590 12 she    + she    PRON  PRP nsubj 14 -      -      -   -          I-ARG1     -   B-ARG0     B-REF155  -       -       -            she/Ci
 590 13 could  + could  AUX   MD  aux   14 -      -      -   -          I-ARG1     B-V B-ARGM-MOD -       -       -       -            could/Mm.<
 590 14 do     + do     VERB  VB  ccomp 10 -      do.02  -   -          I-ARG1     -   B-V        -       -       -       perform.v.01 do/P.sox:01t:01t.-i:01234
-590 15 it     + it     PRON  PRP dobj  14 -      -      -   -          I-ARG1     -   B-ARG1     -       B-REF157  -       -            it/Ci
+590 15 it     + it     PRON  PRP dobj  14 -      -      -   -          I-ARG1     -   B-ARG1     -       B-REF156  -       -            it/Ci
 590 16 on     + on     ADP   IN  prep  14 -      -      -   -          I-ARG1     -   B-ARGM-TMP -       -       -       -            on/Tt
-590 17 Monday - Monday PROPN NNP pobj  16 B-DATE -      -   -          I-ARG1     -   I-ARGM-TMP -       -       B-REF159  monday.n.01  monday/Cp..s.d
+590 17 Monday - Monday PROPN NNP pobj  16 B-DATE -      -   -          I-ARG1     -   I-ARGM-TMP -       -       B-REF157  monday.n.01  monday/Cp..s.d
 590 18 .      - .      PUNCT .   punct 10 -      -      -   -          -          -   -          -       -       -       -            -
 
 # sent_i = 591
@@ -9445,13 +9445,13 @@
 # hyperedge builder = (593.24/Pd.rsx:?02:?0g.<f:0123 ((593.2/Mm.< 593.3/Pd.soxx:012r:01ir.-i:012) 593.1/Ci (593.4/Md.< (+/B.am 593.5/Cc.<.s (+/B.am 593.6/Cc.<.s 593.7/Cc..s)) (593.8/T (593.9/Md.< (593.10/Ma.< (+/B.am 593.11/Cc.<.s 593.12/Cc..s)))) (593.14/T ((593.16/Mv.< (593.17/Mn.< 593.18/P.sr:01:01.-i:01234)) 593.15/Ci ((593.19/Mi.< 593.20/P.-o:01:01.-i:01) 593.15/Ci (+/Jc.rm.rc 593.21/Ci (593.4/Md.< (+/B.am 593.5/Cc.<.s (+/B.am 593.6/Cc.<.s 593.7/Cc..s))))))) 593.23/Ci (593.25/T (+/Jc.rm.rr 593.26/Ci 593.1/Ci)))
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 srl5 srl6 coref1 coref2 synset atoms
 593 0  "        - "        PUNCT ``  punct    24 - -       -   -          -   -          -      -          -       -       -                  -
-593 1  You      + you      PRON  PRP nsubj    3  - -       -   B-ARG0     -   -          -      B-ARGM-DSP B-MAIN16260 -       -                  you/Ci
+593 1  You      + you      PRON  PRP nsubj    3  - -       -   B-ARG0     -   -          -      B-ARGM-DSP B-MAIN160 -       -                  you/Ci
 593 2  can      + can      AUX   MD  aux      3  - -       B-V B-ARGM-MOD -   -          -      I-ARGM-DSP -       -       -                  can/Mm.<
 593 3  use      + use      VERB  VB  ccomp    24 - use.01  -   B-V        -   -          -      I-ARGM-DSP -       -       use.v.01           use/Pd.soxx:012r:01ir.-i:012
-593 4  the      + the      DET   DT  det      7  - -       -   B-ARG1     -   -          -      I-ARGM-DSP -       B-MAIN162 -                  the/Md.<
-593 5  cotton   + cotton   NOUN  NN  compound 6  - -       -   I-ARG1     -   -          -      I-ARGM-DSP -       I-MAIN162 cotton.n.02        cotton/Cc.<.s
-593 6  dressing + dressing NOUN  NN  compound 7  - -       -   I-ARG1     -   -          -      I-ARGM-DSP -       I-MAIN162 dressing_gown.n.01 dressing/Cc.<.s
-593 7  gown     + gown     NOUN  NN  dobj     3  - -       -   I-ARG1     -   -          -      I-ARGM-DSP -       I-MAIN162 dressing_gown.n.01 gown/Cc..s
+593 4  the      + the      DET   DT  det      7  - -       -   B-ARG1     -   -          -      I-ARGM-DSP -       B-MAIN161 -                  the/Md.<
+593 5  cotton   + cotton   NOUN  NN  compound 6  - -       -   I-ARG1     -   -          -      I-ARGM-DSP -       I-MAIN161 cotton.n.02        cotton/Cc.<.s
+593 6  dressing + dressing NOUN  NN  compound 7  - -       -   I-ARG1     -   -          -      I-ARGM-DSP -       I-MAIN161 dressing_gown.n.01 dressing/Cc.<.s
+593 7  gown     + gown     NOUN  NN  dobj     3  - -       -   I-ARG1     -   -          -      I-ARGM-DSP -       I-MAIN161 dressing_gown.n.01 gown/Cc..s
 593 8  as       + as       SCONJ IN  prep     3  - -       -   B-ARG2     -   -          -      I-ARGM-DSP -       -       -                  as/T
 593 9  a        + a        DET   DT  det      12 - -       -   I-ARG2     -   -          -      I-ARGM-DSP -       -       -                  a/Md.<
 593 10 nice     + nice     ADJ   JJ  amod     12 - -       -   I-ARG2     -   -          -      I-ARGM-DSP -       -       nice.a.01          nice/Ma.<
@@ -9459,18 +9459,18 @@
 593 12 cloth    - cloth    NOUN  NN  pobj     8  - -       -   I-ARG2     -   -          -      I-ARGM-DSP -       -       tablecloth.n.01    cloth/Cc..s
 593 13 ,        + ,        PUNCT ,   punct    3  - -       -   -          -   -          -      I-ARGM-DSP -       -       -                  -
 593 14 if       + if       SCONJ IN  mark     18 - -       -   B-ARGM-ADV -   -          -      I-ARGM-DSP -       -       -                  if/T
-593 15 you      + you      PRON  PRP nsubj    18 - -       -   I-ARGM-ADV -   B-ARG0     B-ARG0 I-ARGM-DSP B-REF16260  -       -                  you/Ci
+593 15 you      + you      PRON  PRP nsubj    18 - -       -   I-ARGM-ADV -   B-ARG0     B-ARG0 I-ARGM-DSP B-REF160  -       -                  you/Ci
 593 16 do       - do       AUX   VBP aux      18 - do.01   -   I-ARGM-ADV B-V -          -      I-ARGM-DSP -       -       -                  do/Mv.<
 593 17 n't      + not      PART  RB  neg      18 - -       -   I-ARGM-ADV -   B-ARGM-NEG -      I-ARGM-DSP -       -       not.r.01           n't/Mn.<
 593 18 want     + want     VERB  VB  advcl    3  - want.01 -   I-ARGM-ADV -   B-V        -      I-ARGM-DSP -       -       desire.v.01        want/P.sr:01:01.-i:01234
 593 19 to       + to       PART  TO  aux      20 - -       -   I-ARGM-ADV -   B-ARG1     -      I-ARGM-DSP -       -       -                  to/Mi.<
 593 20 wear     + wear     VERB  VB  xcomp    18 - wear.01 -   I-ARGM-ADV -   I-ARG1     B-V    I-ARGM-DSP -       -       wear.v.01          wear/P.-o:01:01.-i:01
-593 21 it       - it       PRON  PRP dobj     20 - -       -   I-ARGM-ADV -   I-ARG1     B-ARG1 I-ARGM-DSP -       B-REF162  -                  it/Ci
+593 21 it       - it       PRON  PRP dobj     20 - -       -   I-ARGM-ADV -   I-ARG1     B-ARG1 I-ARGM-DSP -       B-REF161  -                  it/Ci
 593 22 "        + "        PUNCT ''  punct    24 - -       -   -          -   -          -      -          -       -       -                  -
 593 23 I        + I        PRON  PRP nsubj    24 - -       -   -          -   -          -      B-ARG0     -       -       -                  i/Ci
 593 24 said     + say      VERB  VBD ROOT     24 - say.01  -   -          -   -          -      B-V        -       -       state.v.01         said/Pd.rsx:?02:?0g.<f:0123
 593 25 to       + to       ADP   IN  prep     24 - -       -   -          -   -          -      B-ARG2     -       -       -                  to/T
-593 26 her      - she      PRON  PRP pobj     25 - -       -   -          -   -          -      I-ARG2     B-REF16260  -       -                  her/Ci
+593 26 her      - she      PRON  PRP pobj     25 - -       -   -          -   -          -      I-ARG2     B-REF160  -       -                  her/Ci
 593 27 .        - .        PUNCT .   punct    24 - -       -   -          -   -          -      -          -       -       -                  -
 
 # sent_i = 594
@@ -9480,26 +9480,26 @@
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 srl5 srl6 coref1 coref2 synset atoms
 594 0  I          + I          PRON  PRP nsubj    1  - -       B-ARG0 -   -          -   -          -      -       -       -                  i/Ci
 594 1  told       + tell       VERB  VBD ROOT     1  - tell.01 B-V    -   -          -   -          -      -       -       state.v.01         told/Pd.sor:021:0g1.<f:012
-594 2  her        + she        PRON  PRP dobj     1  - -       B-ARG2 -   -          -   -          -      B-MAIN16462 -       -                  her/Ci
-594 3  she        + she        PRON  PRP nsubj    5  - -       B-ARG1 -   B-ARG0     -   -          -      B-REF16462  -       -                  she/Ci
+594 2  her        + she        PRON  PRP dobj     1  - -       B-ARG2 -   -          -   -          -      B-MAIN162 -       -                  her/Ci
+594 3  she        + she        PRON  PRP nsubj    5  - -       B-ARG1 -   B-ARG0     -   -          -      B-REF162  -       -                  she/Ci
 594 4  could      + could      AUX   MD  aux      5  - -       I-ARG1 B-V B-ARGM-MOD -   -          -      -       -       -                  could/Mm.<
 594 5  use        + use        VERB  VB  ccomp    1  - use.01  I-ARG1 -   B-V        -   -          -      -       -       use.v.01           use/P.soxx:012r:01ir.-i:012
-594 6  the        + the        DET   DT  det      9  - -       I-ARG1 -   B-ARG1     -   -          -      -       B-MAIN164 -                  the/Md.<
-594 7  cotton     + cotton     NOUN  NN  compound 8  - -       I-ARG1 -   I-ARG1     -   -          -      -       I-MAIN164 cotton.n.02        cotton/Cc.<.s
-594 8  dressing   + dressing   NOUN  NN  compound 9  - -       I-ARG1 -   I-ARG1     -   -          -      -       I-MAIN164 dressing_gown.n.01 dressing/Cc.<.s
-594 9  gown       + gown       NOUN  NN  dobj     5  - -       I-ARG1 -   I-ARG1     -   -          -      -       I-MAIN164 dressing_gown.n.01 gown/Cc..s
+594 6  the        + the        DET   DT  det      9  - -       I-ARG1 -   B-ARG1     -   -          -      -       B-MAIN163 -                  the/Md.<
+594 7  cotton     + cotton     NOUN  NN  compound 8  - -       I-ARG1 -   I-ARG1     -   -          -      -       I-MAIN163 cotton.n.02        cotton/Cc.<.s
+594 8  dressing   + dressing   NOUN  NN  compound 9  - -       I-ARG1 -   I-ARG1     -   -          -      -       I-MAIN163 dressing_gown.n.01 dressing/Cc.<.s
+594 9  gown       + gown       NOUN  NN  dobj     5  - -       I-ARG1 -   I-ARG1     -   -          -      -       I-MAIN163 dressing_gown.n.01 gown/Cc..s
 594 10 as         + as         SCONJ IN  prep     5  - -       I-ARG1 -   B-ARG2     -   -          -      -       -       -                  as/T
 594 11 a          + a          DET   DT  det      13 - -       I-ARG1 -   I-ARG2     -   -          -      -       -       -                  a/Md.<
 594 12 nice       + nice       ADJ   JJ  amod     13 - -       I-ARG1 -   I-ARG2     -   -          -      -       -       nice.a.01          nice/Ma.<
 594 13 tablecloth + tablecloth NOUN  NN  pobj     10 - -       I-ARG1 -   I-ARG2     -   -          -      -       -       tablecloth.n.01    tablecloth/Cc..s
 594 14 if         + if         SCONJ IN  mark     18 - -       I-ARG1 -   B-ARGM-ADV -   -          -      -       -       -                  if/T
-594 15 she        + she        PRON  PRP nsubj    18 - -       I-ARG1 -   I-ARGM-ADV -   B-ARG0     B-ARG0 B-REF16462  -       -                  she/Ci
+594 15 she        + she        PRON  PRP nsubj    18 - -       I-ARG1 -   I-ARGM-ADV -   B-ARG0     B-ARG0 B-REF162  -       -                  she/Ci
 594 16 did        - do         AUX   VBD aux      18 - do.01   I-ARG1 -   I-ARGM-ADV B-V -          -      -       -       -                  did/Mv.<
 594 17 n't        + not        PART  RB  neg      18 - -       I-ARG1 -   I-ARGM-ADV -   B-ARGM-NEG -      -       -       not.r.01           n't/Mn.<
 594 18 want       + want       VERB  VB  advcl    5  - want.01 I-ARG1 -   I-ARGM-ADV -   B-V        -      -       -       desire.v.01        want/P.sr:01:01.-i:01234
 594 19 to         + to         PART  TO  aux      20 - -       I-ARG1 -   I-ARGM-ADV -   B-ARG1     -      -       -       -                  to/Mi.<
 594 20 wear       + wear       VERB  VB  xcomp    18 - wear.01 I-ARG1 -   I-ARGM-ADV -   I-ARG1     B-V    -       -       wear.v.01          wear/P.-o:01:01.-i:01
-594 21 it         - it         PRON  PRP dobj     20 - -       I-ARG1 -   I-ARGM-ADV -   I-ARG1     B-ARG1 -       B-REF164  -                  it/Ci
+594 21 it         - it         PRON  PRP dobj     20 - -       I-ARG1 -   I-ARGM-ADV -   I-ARG1     B-ARG1 -       B-REF163  -                  it/Ci
 594 22 .          - .          PUNCT .   punct    1  - -       -      -   -          -   -          -      -       -       -                  -
 
 # sent_i = 595
@@ -9509,25 +9509,25 @@
 # fields = sent_i tok_i words spaces lemmas pos tags deps heads ner roleset srl1 srl2 srl3 srl4 srl5 srl6 srl7 coref1 coref2 synset atoms
 595 0  "       - "       PUNCT ``  punct 11 - -      -   -          -      -          -      -          -      -       -       -            -
 595 1  Will    + Will    AUX   MD  aux   3  - -      B-V B-ARGM-MOD -      B-ARGM-DSP -      -          -      -       -       -            will/Mm.<
-595 2  you     + you     PRON  PRP nsubj 3  - -      -   B-ARG1     B-ARG0 I-ARGM-DSP -      -          -      B-MAIN16664 -       -            you/Ci
+595 2  you     + you     PRON  PRP nsubj 3  - -      -   B-ARG1     B-ARG0 I-ARGM-DSP -      -          -      B-MAIN164 -       -            you/Ci
 595 3  be      + be      VERB  VB  ccomp 11 - be.01  -   B-V        -      I-ARGM-DSP -      -          -      -       -       be.v.01      be/P?.sc:12:1h.-i:12
 595 4  able    + able    ADJ   JJ  acomp 3  - -      -   B-ARG2     -      I-ARGM-DSP -      -          -      -       -       able.a.01    able/Ca
 595 5  to      + to      PART  TO  aux   6  - -      -   I-ARG2     -      I-ARGM-DSP -      -          -      -       -       -            to/Mi.<
 595 6  do      + do      VERB  VB  xcomp 4  - do.02  -   I-ARG2     B-V    I-ARGM-DSP -      -          -      -       -       perform.v.01 do/P.-o:01:01.-i:01234
-595 7  it      - it      PRON  PRP dobj  6  - -      -   I-ARG2     B-ARG1 I-ARGM-DSP -      -          -      -       B-MAIN166 -            it/Ci
+595 7  it      - it      PRON  PRP dobj  6  - -      -   I-ARG2     B-ARG1 I-ARGM-DSP -      -          -      -       B-MAIN165 -            it/Ci
 595 8  ?       - ?       PUNCT .   punct 3  - -      -   -          -      I-ARGM-DSP -      -          -      -       -       -            -
 595 9  "       + "       PUNCT ''  punct 11 - -      -   -          -      -          -      -          -      -       -       -            -
 595 10 I       + I       PRON  PRP nsubj 11 - -      -   -          -      B-ARG0     -      -          -      -       -       -            i/Ci
 595 11 asked   + ask     VERB  VBD ROOT  11 - ask.01 -   -          -      B-V        -      -          -      -       -       ask.v.01     asked/Pd.rsor:?021:?0g1.<f:0123
-595 12 him     + he      PRON  PRP dobj  11 - -      -   -          -      B-ARG2     -      -          -      B-REF16664  -       -            him/Ci
+595 12 him     + he      PRON  PRP dobj  11 - -      -   -          -      B-ARG2     -      -          -      B-REF164  -       -            him/Ci
 595 13 whether + whether SCONJ IN  mark  16 - -      -   -          -      B-ARG1     -      -          -      -       -       -            whether/T
-595 14 he      + he      PRON  PRP nsubj 16 - -      -   -          -      I-ARG1     -      B-ARG1     B-ARG0 B-REF16664  -       -            he/Ci
+595 14 he      + he      PRON  PRP nsubj 16 - -      -   -          -      I-ARG1     -      B-ARG1     B-ARG0 B-REF164  -       -            he/Ci
 595 15 would   + would   AUX   MD  aux   16 - -      -   -          -      I-ARG1     B-V    B-ARGM-MOD -      -       -       -            would/Mm.<
 595 16 be      + be      VERB  VB  ccomp 11 - be.01  -   -          -      I-ARG1     -      B-V        -      -       -       be.v.01      be/P.sc:12:1h.-i:12
 595 17 able    + able    ADJ   JJ  acomp 16 - -      -   -          -      I-ARG1     B-ARG2 B-ARG2     -      -       -       able.a.01    able/Ca
 595 18 to      + to      PART  TO  aux   19 - -      -   -          -      I-ARG1     -      I-ARG2     -      -       -       -            to/Mi.<
 595 19 do      + do      VERB  VB  xcomp 17 - do.02  -   -          -      I-ARG1     -      I-ARG2     B-V    -       -       perform.v.01 do/P.-o:01:01.-i:01234
-595 20 it      - it      PRON  PRP dobj  19 - -      -   -          -      I-ARG1     -      I-ARG2     B-ARG1 -       B-REF166  -            it/Ci
+595 20 it      - it      PRON  PRP dobj  19 - -      -   -          -      I-ARG1     -      I-ARG2     B-ARG1 -       B-REF165  -            it/Ci
 595 21 .       - .       PUNCT .   punct 11 - -      -   -          -      -          -      -          -      -       -       -            -
 
 # sent_i = 596
