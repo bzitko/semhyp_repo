@@ -400,121 +400,127 @@ def _get_conj_closure(tok: Token) -> Token:
         tok = tok.head
     return tok
 
+# SemHyP atom rules
 def build_type_and_subtype(tok: Token) -> str:
     if tok.dep == "conj":
         closure = _get_conj_closure(tok)
         if tok.tag == closure.tag:  # and tok.pos not in {"VERB"}:
             return build_type_and_subtype(closure)
             
-    if tok.dep == "amod":
-        if tok.tag == "JJR":
-            return "Mc"
-        if tok.tag == "JJS":
-            return "Ms"
-        return "Ma"
-    if tok.dep == "nummod":
-        return "M#"
+    # Modification rules
+    if tok.dep == "amod":    
+        if tok.tag == "JJR":  
+            return "Mc"       # A1.1
+        if tok.tag == "JJS":  
+            return "Ms"       # A1.2  
+        return "Ma"           # A1.3 Ms in paper
+    if tok.dep == "nummod":   
+        return "M#"           # A2
     if tok.dep == "nmod":
         if tok.pos == "X":
-            return "Cm"
-        return "M"
+            return "Cm"       # A3.1
+        return "M"            # A3.2
     if tok.dep == "det":
-        if tok.tag == "WDT":
-            return "Mw"
-        return "Md"
-    if tok.dep == "neg":
-        return "Mn"
+        if tok.tag == "WDT":  
+            return "Mw"       # A4.1 
+        return "Md"           # A4.2
+    if tok.dep == "neg":      
+        return "Mn"           # A5 
     if tok.dep in {"aux", "auxpass"}:
         if tok.tag == "TO":
-            return "Mi"
+            return "Mi"       # A6.1 
         if tok.tag == "MD":
-            return "Mm"
-        return "Mv"
+            return "Mm"       # A6.2
+        return "Mv"           # A6.3
     if tok.dep == "advmod":
         if tok.tag == "RBR":
-            return "M="
+            return "M="       # A7.1
         if tok.tag == "RBS":
-            return "M^"
+            return "M^"       # A7.2
         if tok.tag == "WRB":
-            return "Mw"
-        return "M"
-    if tok.dep == "predet":
-        return "M"
+            return "Mw"       # Missing in paper, but it is a wh-adverb, so it should be treated as a determiner
+        return "M"            # A7.3
+    if tok.dep == "predet":   
+        return "M"            # A8 
     if tok.dep == "quantmod":
-        return "M"
+        return "M"            # A9
     if tok.dep == "prt":
-        return "Ml.r"
+        return "Ml.r"         # A10  
     if tok.dep == "expl":
-        return "Me"
+        return "Me"           # A11
     
     if tok.dep == "npadvmod" and tok.head.dep in {"mark", "prep"}:
-        return "M"
-    
-    if tok.dep == "cc":
-        return "J"
-    if tok.dep == "preconj":
-        return "J"
+        return "M"            # A12
     
     if tok.dep == "poss":
-        if tok.tag == "PRP$":
+        if tok.tag == "PRP$": # A13.1
             return "Mp"
         if tok.tag == "PRP":
-            return "Ci"
+            return "Ci"       # A13.2 
         if tok.pos not in {"NOUN", "PROPN"}:
-            return "Mp"
+            return "Mp"       # Missing in paper, but if it is not a noun or proper noun, it should be treated as possessive determiner    
     
+    # Conjunction rules
+    if tok.dep == "cc":
+        return "J"            # A14 
+    if tok.dep == "preconj":
+        return "J"            # A15
+        
+    # Prepositional rules
     if tok.dep == "case":
-        return "Bp"
+        return "Bp"           # A16
 
     if tok.dep == "agent":
-        return "T" + _get_trigger_subtype(tok)
+        return "T" + _get_trigger_subtype(tok)  # A17
     
     if tok.dep == "prep":
         if tok.head.pos not in {"VERB", "AUX", "MD"} and tok.head.dep not in {"prep"}:
 #             if tok.head.dep == "acomp":
 #                 return "Jr.ma"
-            return "Br"
+            return "Br"        # A18.1
         
-        return "T" + _get_trigger_subtype(tok)
+        return "T" + _get_trigger_subtype(tok) # A18.2
 
     if tok.dep == "mark":
-        return "T" + _get_trigger_subtype(tok)
+        return "T" + _get_trigger_subtype(tok) # A18.3
     
-    if tok.dep == "acomp":
+    if tok.dep == "acomp":  # A1.4 Cm in paper
         return "Ca"
     
+    # Residual rules
     if tok.pos == "NOUN":
-        return "Cc"
+        return "Cc"            # A20
     if tok.pos == "PROPN":
-        return "Cp"
+        return "Cp"            # A21
     if tok.pos == "PRON":
         if tok.tag[0] == "W":
-            return "Cw"
-        return "Ci"
+            return "Cw"        # A22.1
+        return "Ci"            # A22.2
     if tok.pos == "NUM":
-        return "C#"
+        return "C#"            # A23
     if tok.pos == "DET":
-        return "Cd"
+        return "Cd"            # A24
     
     if tok.pos == "ADJ":
-        return "M"
+        return "M"             # A25
     if tok.pos == "ADP":
-        return "T" + _get_trigger_subtype(tok)
+        return "T" + _get_trigger_subtype(tok)  # A26
     
     if tok.pos == "SCONJ":
-        return "T" + _get_trigger_subtype(tok)
+        return "T" + _get_trigger_subtype(tok)  # A27
     
     if tok.pos in {"VERB", "AUX", "MD"}:
         for child in reversed(list(tok.rights)):
+            # depending on the punctuation, subtype can be different.
             if child.dep == "punct":
                 if child.text in ".,;:":
-                    return "Pd"
+                    return "Pd"                 # A28.1 declarative
                 if child.text == "?":
-                    return "P?"
+                    return "P?"                 # A28.2 interrogative
                 if child.text == "!":
-                    return "P!"
+                    return "P!"                 # A28.3 exclamative
 
-        return "P"
+        return "P"                              # A28.4
 
     return "C"
 
@@ -635,133 +641,64 @@ def _main_parse(sent, with_lemma=False, with_synset=False, debug=False):
         if debug:
             trace[-1]["2. parent_edge"] = parent_edge
             trace[-1]["3. child_edge"] = child_edge
-            
+
+
+        # SemHyP hyperedge rules 
+        
+        # Argument rules
         if ((rel in {"nsubj", "nsubjpass", "dobj", "dative", "oprd",
                      "acomp", "attr", "expl", "csubj", "csubjpass",
                      "parataxis", "intj"}) or 
             (rel in {"ccomp", "xcomp", "advcl"} and parent.dep not in {"acomp", "advmod", "attr"}) or
             (parent.pos in {"VERB", "AUX", "MD"} and rel in {"advmod", "prep", "npadvmod"} and not alpha_condition(_get_conj_closure(parent)))):
 
-            if child_type == "P" and child not in predicates:
-                predicates[child] = beta[child] = child_edge = [child_edge]  
+            if child_type == "P" and child not in predicates:                    
+                predicates[child] = beta[child] = child_edge = [child_edge]       
 
-            if parent in predicates:
-                beta[parent] = parent_edge + [child_edge]
+            if parent in predicates:                                
+                beta[parent] = parent_edge + [child_edge]           # E1.1    
             else:
-                beta[parent] = [parent_edge] + [child_edge]
+                beta[parent] = [parent_edge] + [child_edge]         # E1.2
             predicates[parent] = beta[parent]
                 
-        elif rel in {"ccomp", "xcomp", "advcl"} and parent.dep == "acomp":
+        elif rel in {"ccomp", "xcomp", "advcl"} and parent.dep == "acomp":               # E2.1 first part
             empty = _build_empty_atom("+", "Br", "am", ents=_get_entity_features(parent, child))
             if child_type == "P" and child not in predicates:
                 predicates[child] = beta[child] = child_edge = [child_edge]
             beta[parent] = [empty, parent_edge, child_edge]
             # beta[parent] = Edge([build_unique_atom(":", "J"), parent_edge, child_edge])
-        elif rel in {"ccomp", "xcomp", "advcl"} and parent.dep == "advmod":
+        elif rel in {"ccomp", "xcomp", "advcl"} and parent.dep == "attr":               # E2.1 second part
+            empty = _build_empty_atom("+", "Br", "am", ents=_get_entity_features(parent, child))
+            if child_type == "P" and child not in predicates:
+                predicates[child] = beta[child] = child_edge = [child_edge]
+            beta[parent] = [empty, parent_edge, child_edge]
+        elif rel in {"ccomp", "xcomp", "advcl"} and parent.dep == "advmod":              # E2.2
             if child_type == "P" and child not in predicates:
                 predicates[child] = beta[child] = child_edge = [child_edge]
             beta[parent] = [parent_edge, child_edge]
             #beta[parent] = Edge([build_unique_atom("+", "Br.ma"), parent_edge, child_edge])
-        elif rel in {"ccomp", "xcomp", "advcl"} and parent.dep == "attr":
-            empty = _build_empty_atom("+", "Br", "am", ents=_get_entity_features(parent, child))
-            if child_type == "P" and child not in predicates:
-                predicates[child] = beta[child] = child_edge = [child_edge]
-            beta[parent] = [empty, parent_edge, child_edge]
 
-        elif rel == "prep":
-            if parent.dep == child.dep:
-                # special case
-                empty = _build_empty_atom(":", "J", ents=_get_entity_features(parent, child))
-                if is_atom(child_edge):
-                    beta[parent] = [empty, parent_edge, child_edge]
-                else:
-                    beta[parent] = [empty, parent_edge] + child_edge
-            else:
-                if is_atom(child_edge):
-                    beta[parent] = [parent_edge] + [child_edge]
-                else:
-                    beta[parent] = [child_edge[0]] + [parent_edge] + child_edge[1:]
-                
+        elif rel in {"aux", "auxpass"}:
+            beta[parent] = [child_edge, parent_edge]       # E3
+
+        # Clausal rules
         elif rel == "agent":
             if is_atom(parent_edge):
-                beta[parent] = [parent_edge] + [child_edge]
+                beta[parent] = [parent_edge] + [child_edge]   # E4.1
             else:
                 if parent in predicates:
-                    beta[parent] = parent_edge + [child_edge]
+                    beta[parent] = parent_edge + [child_edge] # E4.2
                 else:
-                    beta[parent] = [parent_edge, child_edge]
+                    beta[parent] = [parent_edge, child_edge]  # E4.3
             predicates[parent] = beta[parent]
-            
-        elif rel == "mark":
-            beta[parent] = [child_edge, parent_edge]
-            
-        elif rel in {"pobj", "pcomp"}:
-            beta[parent] = [parent_edge, child_edge]
-        
-        elif rel in {"amod"} and parent.dep == "prep":  
-            if child.i > parent.i:
-                beta[parent] = [parent_edge, child_edge] # as fast as possible
-            else:
-                #beta[parent] = Edge([parent_edge, child_edge])
-                beta[parent] = [child_edge, parent_edge]
-            
-        elif rel in {"npadvmod"} and parent.dep in {"mark", "prep"}:
-            beta[parent] = [child_edge, parent_edge]
-            
-            
-        elif rel in {"det", "predet", "amod", "advmod", "nmod", "nummod", "npadvmod", "quantmod"}:
-            if parent_type == child_type == "C":
-                if parent.i < child.i:
-                    empty = _build_empty_atom("+", "B", "ma", ents=_get_entity_features(parent, child))
-                    beta[parent] = [empty, parent_edge, child_edge]
-                else:
-                    empty = _build_empty_atom("+", "B", "am", ents=_get_entity_features(parent, child))
-                    beta[parent] = [empty, child_edge, parent_edge]
-            elif parent_type == "C":
-                beta[parent] = [child_edge, parent_edge]
-            elif child_type == "C":   
-                beta[parent] = [parent_edge, child_edge]
-            else:
-                if child.i < parent.i:
-                    beta[parent] = [child_edge, parent_edge]
-                else:
-                    beta[parent] = [parent_edge, child_edge]
-                
-            
-        elif rel in {"aux", "auxpass"}:
-            beta[parent] = [child_edge, parent_edge]
-            
-        elif rel == "prt":
-            beta[parent] = [child_edge, parent_edge]
-            # beta[parent] = Edge([build_unique_atom(":", "J"), parent_edge, child_edge])
-            
-        elif rel == "neg":
-            beta[parent] = [child_edge, parent_edge]
-            
-        elif rel == "case":
-            beta[parent] = [child_edge, parent_edge]
-            cases.add(parent)
-            
-        elif rel == "poss":
-            if child in cases:
-                beta[parent] = child_edge + [parent_edge]
-            else:
-                beta[parent] = [child_edge, parent_edge]
-            
-        elif rel == "appos":
-            empty = _build_empty_atom("+", "Ba", "ma", morph=_get_appos_features(child), ents=_get_entity_features(parent, child))
-            beta[parent] = [empty, parent_edge, child_edge]
-            
-        elif rel in "compound":
-            empty = _build_empty_atom("+", "B", "am", ents=_get_entity_features(parent, child))
-            beta[parent] = [empty, child_edge, parent_edge]
-            
+
         elif rel in {"acl", "relcl"}:
             if child not in predicates:
                 predicates[child] = beta[child] = child_edge = [child_edge]
             empty = _build_empty_atom("+", "Jr", "ma", ents=_get_entity_features(parent, child))
-            beta[parent] = [empty, parent_edge, child_edge]
+            beta[parent] = [empty, parent_edge, child_edge]                                           # E5
 
+        # Coordination rules
         elif rel == "conj":
             # check if child is an atom predicate (no args)
             # if is_atom(child_edge) and types.get(child) == "P":
@@ -773,27 +710,27 @@ def _main_parse(sent, with_lemma=False, with_synset=False, debug=False):
 
             if parent in conjs and child in conjs:                
                 if parent.i < child.i:
-                    beta[parent] = parent_edge + [child_edge]
+                    beta[parent] = parent_edge + [child_edge]       # E6.1
                 else:
-                    beta[parent] = child_edge + [parent_edge]
+                    beta[parent] = child_edge + [parent_edge]       # E6.2
                     
             elif parent in conjs and child not in conjs:
                 if child.i < parent.i:
-                    beta[parent] = [parent_edge[0]] + [child_edge] + parent_edge[1:]
+                    beta[parent] = [parent_edge[0]] + [child_edge] + parent_edge[1:]  # E6.3
                 else:
-                    beta[parent] = parent_edge + [child_edge]
+                    beta[parent] = parent_edge + [child_edge]                         # E6.4
                 conjs[child] = child_edge
 
             elif parent not in conjs and child in conjs:
                 if parent.i < child.i:
-                    beta[parent] = [child_edge[0]] + [parent_edge] + list(child_edge[1:])
+                    beta[parent] = [child_edge[0]] + [parent_edge] + list(child_edge[1:])  # E6.5
                 else:
-                    beta[parent] = child_edge[0] + [parent_edge]
+                    beta[parent] = child_edge[0] + [parent_edge]                           # E6.6
                 conjs[parent] = parent_edge
                     
             elif parent not in conjs and child not in conjs:
                 empty = _build_empty_atom(":", "J", ents=_get_entity_features(parent, child))
-                beta[parent] = [empty, parent_edge, child_edge]
+                beta[parent] = [empty, parent_edge, child_edge]                            # E6.7  
                 conjs[parent] = parent_edge
                 conjs[child] = child_edge
                 
@@ -801,16 +738,99 @@ def _main_parse(sent, with_lemma=False, with_synset=False, debug=False):
             if parent_type == "P" and parent not in predicates and parent not in conjs:
                 predicates[parent] = beta[parent] = parent_edge = [parent_edge]              
 
-            beta[parent] = [child_edge] + [parent_edge]
+            beta[parent] = [child_edge] + [parent_edge]                                    # E7
             conjs[parent] = parent_edge
 
         elif rel == "preconj":
-            beta[parent] = [child_edge] + [parent_edge]
+            beta[parent] = [child_edge] + [parent_edge]                                    # E8
+
+
+        # Relation rules
+        elif rel == "prep":
+            if parent.dep == child.dep:
+                # special case
+                empty = _build_empty_atom(":", "J", ents=_get_entity_features(parent, child))
+                if is_atom(child_edge):
+                    beta[parent] = [empty, parent_edge, child_edge]                   # E9.1 first part
+                else:
+                    beta[parent] = [empty, parent_edge] + child_edge                  # E9.1 second part
+            else:
+                if is_atom(child_edge):
+                    beta[parent] = [parent_edge] + [child_edge]                       # E9.2     
+                else:
+                    beta[parent] = [child_edge[0]] + [parent_edge] + child_edge[1:]   # E9.3
             
+        elif rel == "mark":
+            beta[parent] = [child_edge, parent_edge]                                  # E10
+            
+        elif rel in {"pobj", "pcomp"}:
+            beta[parent] = [parent_edge, child_edge]                                  # E11
+        
+        elif rel == "case":
+            beta[parent] = [child_edge, parent_edge]                                  # E12
+            cases.add(parent)                                                           
+
+        # Nominal rules
+        elif rel == "poss":
+            if child in cases:
+                beta[parent] = child_edge + [parent_edge]                            # E13.1
+            else:
+                beta[parent] = [child_edge, parent_edge]                             # E13.2
+            
+        elif rel == "appos":
+            empty = _build_empty_atom("+", "Ba", "ma", morph=_get_appos_features(child), ents=_get_entity_features(parent, child))
+            beta[parent] = [empty, parent_edge, child_edge]                          # E14
+            
+        elif rel in "compound":
+            empty = _build_empty_atom("+", "B", "am", ents=_get_entity_features(parent, child))
+            beta[parent] = [empty, child_edge, parent_edge]                          # E15
+            
+
+
+        # Modification rules
+        elif rel in {"amod"} and parent.dep == "prep":  
+            if child.i > parent.i:
+                beta[parent] = [parent_edge, child_edge] # as fast as possible       # E16.1
+            else:
+                #beta[parent] = Edge([parent_edge, child_edge])
+                beta[parent] = [child_edge, parent_edge]                             # E16.2
+            
+        elif rel in {"npadvmod"} and parent.dep in {"mark", "prep"}:
+            beta[parent] = [child_edge, parent_edge]                                 # E17
+            
+            
+        elif rel in {"det", "predet", "amod", "advmod", "nmod", "nummod", "npadvmod", "quantmod"}:
+            if parent_type == child_type == "C":
+                if parent.i < child.i:
+                    empty = _build_empty_atom("+", "B", "ma", ents=_get_entity_features(parent, child))
+                    beta[parent] = [empty, parent_edge, child_edge]                 # E18.1
+                else:
+                    empty = _build_empty_atom("+", "B", "am", ents=_get_entity_features(parent, child))
+                    beta[parent] = [empty, child_edge, parent_edge]                 # E18.2
+            elif parent_type == "C":
+                beta[parent] = [child_edge, parent_edge]                            # E18.3
+            elif child_type == "C":   
+                beta[parent] = [parent_edge, child_edge]                            # E18.4
+            else:
+                if child.i < parent.i:
+                    beta[parent] = [child_edge, parent_edge]                        # E18.5
+                else:
+                    beta[parent] = [parent_edge, child_edge]                        # E18.6
+                
+        elif rel == "prt":
+            beta[parent] = [child_edge, parent_edge]                                # E19
+            # beta[parent] = Edge([build_unique_atom(":", "J"), parent_edge, child_edge])
+            
+        elif rel == "neg":
+            beta[parent] = [child_edge, parent_edge]                                # E20
+            
+
+            
+        # Residual rules
         elif rel in {"dep", "meta"}:
             if not parent_type == "P":
                 empty = _build_empty_atom(":", "J", ents=_get_entity_features(parent, child))
-                beta[parent] = [empty, parent_edge, child_edge]
+                beta[parent] = [empty, parent_edge, child_edge]                    # E21
             
         if parent in hist and parent in beta:
             hist[parent].append(beta[parent])
