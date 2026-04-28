@@ -124,7 +124,25 @@ class SVGBlockSentAnno():
         column_x_lefts = [(sum(column_widths[:i])) * owner.font_width for i in range(len(column_widths))]
         column_w_lefts = [column_widths[i] * owner.font_width for i in range(len(column_widths))]
 
-        self.width = sum(column_widths) * owner.font_width
+        #self.width = sum(column_widths) * owner.font_width
+
+        # 1. Calculate the width of each column in pixels
+        column_widths_px = [w * owner.font_width for w in column_widths]
+
+        # 2. Calculate X Lefts (starting position of each column)
+        # Each column starts after the previous columns + padding for each gap
+        column_x_lefts = []
+        current_x = 0
+        for w_px in column_widths_px:
+            column_x_lefts.append(current_x)
+            current_x += w_px + owner.col_pad # Add padding after each column
+
+        # 3. Calculate X Centers (for centered text and arc endpoints)
+        column_x_centers = [left + (w_px // 2) for left, w_px in zip(column_x_lefts, column_widths_px)]
+
+        # 4. Update the total block width
+        # Total width is the sum of columns + (number of gaps * col_pad)
+        self.width = sum(column_widths_px) + (len(column_widths) - 1) * owner.col_pad
 
 
         # draw dependency arcs
@@ -138,7 +156,7 @@ class SVGBlockSentAnno():
             self._content.append(elem)
             self.dep_anno_border_height = max(elem.get_height(owner.font_height), self.dep_anno_border_height)
 
-        self.height = self.dep_anno_border_height + max(len(column) for column in table) * owner.font_height
+        self.height = self.dep_anno_border_height + max(len(column) for column in table) * (owner.font_height + owner.row_pad)
 
         for elem in self._content:
             elem.reset(y=self.dep_anno_border_height)
@@ -148,7 +166,7 @@ class SVGBlockSentAnno():
             for j, value in enumerate(column):
                 if isinstance(value, str):
                     self._content.append(SVGElemText(x=column_x_centers[i], 
-                                                    y= self.dep_anno_border_height + (j + 1) * owner.font_height, 
+                                                    y=(self.dep_anno_border_height + (j + 1) * (owner.font_height + owner.row_pad)), 
                                                     value=value,
                                                     cls=f"center-text {table_annos[j]}"
                                                     ))
@@ -156,8 +174,8 @@ class SVGBlockSentAnno():
                     value, size = value
                     w = sum(column_w_lefts[k] for k in range(i, i + size))
                     self._content.append(SVGElemRectText(x=column_x_lefts[i], 
-                                                         y=self.dep_anno_border_height + (j + 1) * owner.font_height, 
-                                                         w=w,
+                                                         y=self.dep_anno_border_height + (j + 1) * (owner.font_height + owner.row_pad), 
+                                                         w=w + owner.col_pad,
                                                          h=owner.font_height,
                                                          value=value,
                                                          text_cls=f"center-text {table_annos[j]}"))
@@ -185,21 +203,19 @@ class SVGBlockHyperedge():
         def store2dict(nodes, item):
             if isinstance(item, Atom):
                 item = Atom(*item)
+
             if item in nodes:
                 return nodes[item]
             nodes[item] = len(nodes)
             return nodes[item]
 
-        def edge_role(edge):
+        def make_edge_role(edge):
             if is_atom(edge):
-                roles = edge.roles()
-                if roles:
-                    return ".".join(roles)
-                return ""
+                return edge.to_str(with_label=False)
 
             et = edge.type()
             if et[0] == "P":
-                return edge_role(edge[-1])
+                return make_edge_role(edge[-1])
 
             er = edge.argroles()
             if et and er:
@@ -227,14 +243,14 @@ class SVGBlockHyperedge():
             for child in parent[1:]:
                 if not is_atom(child) and child[0].type()[0] in ("J", "B"):
                     child_i = store2dict(nodes, child[0])
-                    rel = edge_role(child[0])
+                    rel = make_edge_role(child[0])
                     stack += [child]
                 elif child.type()[0] in ("C", "P", "M") or is_atom(child):
                     child_i = store2dict(nodes, child)
-                    rel = edge_role(child)
+                    rel = make_edge_role(child)
                 else:
                     child_i = store2dict(nodes, child[0])
-                    rel = edge_role(child[0])
+                    rel = make_edge_role(child[0])
                     stack += [child]
 
                 # triples from graph with repeated child store in extra links
@@ -257,7 +273,7 @@ class SVGBlockHyperedge():
             data["nodes"][i] = {"text": str(node.simplify()),
                                 "type": node.type()[0]}
 
-        root_role = edge_role(edge if is_atom(edge) else edge[0])
+        root_role = make_edge_role(edge if is_atom(edge) else edge[0])
         data["links"].append((0, 0, root_role))
 
         return data

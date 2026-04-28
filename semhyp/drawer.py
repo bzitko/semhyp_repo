@@ -66,7 +66,7 @@ class SVGCanvas():
 </svg>
 """
 
-    def  __init__(self, font_height, font_width, offset, margin=0, colors=None):
+    def  __init__(self, font_height, font_width, offset, margin=0, row_pad=0, col_pad=0, colors=None):
         """
         Initializes the SVGCanvas with specified font height, font width, offset, margin, and colors.
 
@@ -84,6 +84,8 @@ class SVGCanvas():
         self._blocks = []
         self.width = 0
         self.height = self.margin
+        self.row_pad = row_pad
+        self.col_pad = col_pad
 
         self.colors = colors
         if self.colors is None:
@@ -132,7 +134,7 @@ class SVGCanvas():
         return svg
     
 
-def draw_text(doc_or_sents, show_spans=True, annos=None, font_height=16, font_width=16*0.6, offset=5, margin=0):
+def draw_text(doc_or_sents, show_spans=True, annos=None, sent_text=True, font_height=16, font_width=16*0.6, offset=5, margin=0, row_pad=0, col_pad=0):
     """
     Draws annotated sentences on an SVG canvas.
 
@@ -151,7 +153,9 @@ def draw_text(doc_or_sents, show_spans=True, annos=None, font_height=16, font_wi
     canvas = SVGCanvas(font_height=font_height,
                        font_width=font_width,
                        offset=offset,
-                       margin=margin)
+                       margin=margin,
+                       row_pad=row_pad,
+                       col_pad=col_pad)
         
     if isinstance(annos, str):
         annos = annos.replace(" ", "").split(",")
@@ -164,8 +168,11 @@ def draw_text(doc_or_sents, show_spans=True, annos=None, font_height=16, font_wi
         sents = doc_or_sents
 
     for sent in sents:
-        block = SVGBlockSent(canvas, sent)
-        canvas.add(block)
+        sent = Span(sent.doc, sent.start, sent.end)
+        
+        if sent_text:
+            block = SVGBlockSent(canvas, sent)
+            canvas.add(block)
         block = SVGBlockSentAnno(canvas, sent, show_spans=show_spans, annos=annos)
         canvas.add(block)
     

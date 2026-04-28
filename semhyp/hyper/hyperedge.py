@@ -260,7 +260,7 @@ class Atom(Hyperedge):
         if isinstance(i, str):
             return part2str(getattr(part, i))
         return part2str(part[i])
-
+    
     def roles(self, i=None):
         return self._part_getter(self[2], i)
 
@@ -290,7 +290,7 @@ class Atom(Hyperedge):
     def atoms(self):
         return {self}
 
-    def to_str(self):
+    def to_str(self, with_label=True):
         txt = part2str(self[0])
 
         rest = []
@@ -308,7 +308,10 @@ class Atom(Hyperedge):
         if not rest:
             return txt
 
-        return txt + "/" + ".".join(rest)
+        if with_label:
+            return txt + "/" + ".".join(rest)
+        else:
+            return ".".join(rest)
 
 
 class UniqueAtom(Atom):
