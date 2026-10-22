@@ -1,3 +1,11 @@
+
+This repository contains the implementation of the rule-based semantic
+hypergraph parser presented in our paper:
+
+**Žitko et al. (2026)**,
+[Rule-based semantic hypergraph parsing from textual annotations](https://doi.org/10.1016/j.knosys.2026.117010),
+*Knowledge-Based Systems*, 352, 117010.
+
 # SemHyP: Semantic Hypergraph Parser
 
 SemHyP is a **semantic hypergraph parser** that takes **textual annotations** as input and produces a **semantic hypergraph** as output.  
@@ -60,3 +68,27 @@ This repository contains the following example datasets with textual annotations
 ## Installation & Usage
 
 Currently, SemHyP can be installed by **cloning this repository**. No additional Python packages are required.
+
+
+## Citation
+
+If you use this repository in your research, please cite the following paper:
+
+**Žitko, B., Grubišić, A., Vasić, D., & Bročić, L. (2026).**
+Rule-based semantic hypergraph parsing from textual annotations.
+*Knowledge-Based Systems, 352*, 117010.
+https://doi.org/10.1016/j.knosys.2026.117010
+
+```bibtex
+@article{Zitko2026,
+  title   = {Rule-based semantic hypergraph parsing from textual annotations},
+  author  = {Žitko, Branko and Grubišić, Ani and Vasić, Daniel and Bročić, Lucija},
+  journal = {Knowledge-Based Systems},
+  volume  = {352},
+  pages   = {117010},
+  year    = {2026},
+  doi     = {10.1016/j.knosys.2026.117010},
+  url     = {https://www.sciencedirect.com/science/article/pii/S0950705126017363}
+}
+```
+
